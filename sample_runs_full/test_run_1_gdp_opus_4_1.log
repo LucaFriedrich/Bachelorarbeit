@@ -1,0 +1,1674 @@
+(.venv) ╭─luca@LucasMBP ~/Bachelorarbeit/ba_be  ‹main*›
+╰─➤  python run_cli.py                                                                                                                                                                  130 ↵
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse für Moodle                                                                                                                                                 ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs auswählen:
+⠋ Lade Kursliste von Moodle...  [INFO] llm.moodle.course_downloader: Fetching all courses from Moodle
+  [INFO] llm.moodle.course_downloader: Found 4 courses
+           Verfügbare Moodle-Kurse
+╭──────┬──────────────────┬──────────────────╮
+│ #    │ Kursname         │ Shortname        │
+├──────┼──────────────────┼──────────────────┤
+│ 1    │ webtech_template │ webtech_template │
+├──────┼──────────────────┼──────────────────┤
+│ 2    │ gdp_template     │ gdp_template     │
+├──────┼──────────────────┼──────────────────┤
+│ 3    │ gdp_test         │ gdp_test         │
+├──────┼──────────────────┼──────────────────┤
+│ 4    │ webtech_test     │ webtech_test     │
+╰──────┴──────────────────┴──────────────────╯
+
+? Wähle einen Kurs 3. gdp_test (gdp_test)
+✓ Gewählt: gdp_test
+✓ Kurs 'gdp_test' ausgewählt
+
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? Pipeline ausführen (Phase 1-3)
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE 1: Dokumente laden                                                                                                                                                                   │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+⠋ Lade Dokumente für Kurs 'gdp_test'...  [INFO] cli.phases.ingestion: Verbinde mit Moodle: https://moodle.lucafriedrich.com
+  [INFO] cli.phases.ingestion: Suche Kurs mit Shortname: gdp_test
+⠸ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Found course: gdp_test (ID: 11)
+  [INFO] cli.phases.ingestion: Download-Verzeichnis: downloads/gdp_test
+Lade Kursmaterialien...
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Processing section: Einführung in Programmiergrundlagen und Algorithmen
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp01.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Java-Datentypen und Operatoren
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp02.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Strings und Benutzereingaben in Java
+⠋ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp03.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Erstes Hello World Programm
+  [INFO] llm.moodle.course_downloader: Processing section: Java-Kontrollstrukturen: Schleifen, Verzweigungen und Programmfluss
+⠹ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp04.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Methoden und Javadoc-Dokumentation
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp05.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Java-Arrays: Datenstrukturen und Iteration
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp06.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Objektorientierte Programmierung: Klassen und Objekte in Java
+⠙ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp07.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Java Nutzerverwaltung mit Rollen
+  [INFO] llm.moodle.course_downloader: Processing section: Java OOP II: Vererbung, Static &amp; Packages
+⠴ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp08.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Java Strings II - Fortgeschrittene String-Verarbeitung
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp09.pdf
+  [INFO] llm.moodle.course_downloader: Processing section: Versionsverwaltung mit Git
+⠴ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Downloaded: gdp10.pdf
+  [INFO] llm.moodle.course_downloader: Downloaded 10 files from course
+10 Dateien heruntergeladen
+Lade Assignments...
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+2 Assignments gefunden
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] cli.phases.ingestion: Initialisiere DocumentManager...
+⠏ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.graph.neo4j_client: Neo4j verbunden mit: localhost:7687
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (d:Document) REQUIRE d.doc_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (c:Competency) REQUIRE c.name IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (e:Exercise) REQUIRE e.exercise_id IS UNIQUE
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (l:LearningGoal) REQUIRE l.goal_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (lec:Lecture) REQUIRE lec.lecture_id IS UNIQUE
+  [INFO] llm.graph.graph_ingestion:  Embeddings für Kompetenz-Deduplikation aktiviert
+  [INFO] llm.evaluate.document_manager:  Graph-Integration aktiviert
+  [INFO] cli.phases.ingestion: Lade 10 Dokumente in ChromaDB...
+Chunke und lade downloads/gdp_test/gdp01.pdf in die Vektor-Datenbank
+⠴ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  32 Dokumente erfolgreich in Chroma ingestiert.
+⠋ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp01
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp01.pdf
+  [INFO] cli.phases.ingestion: gdp01.pdf: 32 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp02.pdf in die Vektor-Datenbank
+⠼ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  67 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp02
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp02.pdf
+  [INFO] cli.phases.ingestion: gdp02.pdf: 67 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp03.pdf in die Vektor-Datenbank
+⠏ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  23 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp03
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp03.pdf
+  [INFO] cli.phases.ingestion: gdp03.pdf: 23 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp04.pdf in die Vektor-Datenbank
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  62 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp04
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp04.pdf
+  [INFO] cli.phases.ingestion: gdp04.pdf: 62 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp05.pdf in die Vektor-Datenbank
+⠸ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  38 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp05
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp05.pdf
+  [INFO] cli.phases.ingestion: gdp05.pdf: 38 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp06.pdf in die Vektor-Datenbank
+⠴ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  41 Dokumente erfolgreich in Chroma ingestiert.
+⠦ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp06
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp06.pdf
+  [INFO] cli.phases.ingestion: gdp06.pdf: 41 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp07.pdf in die Vektor-Datenbank
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  49 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp07
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp07.pdf
+  [INFO] cli.phases.ingestion: gdp07.pdf: 49 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp08.pdf in die Vektor-Datenbank
+⠋ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  52 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp08
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp08.pdf
+  [INFO] cli.phases.ingestion: gdp08.pdf: 52 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp09.pdf in die Vektor-Datenbank
+⠧ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  33 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp09
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp09.pdf
+  [INFO] cli.phases.ingestion: gdp09.pdf: 33 chunks erstellt
+Chunke und lade downloads/gdp_test/gdp10.pdf in die Vektor-Datenbank
+⠹ Lade Dokumente für Kurs 'gdp_test'...  [INFO] llm.chroma.chroma_ingest:  34 Dokumente erfolgreich in Chroma ingestiert.
+  [INFO] llm.graph.graph_ingestion: Dokument ingested: GDP_TEST_gdp10
+  [INFO] llm.evaluate.document_manager:  Graph-Knoten erstellt für: gdp10.pdf
+  [INFO] cli.phases.ingestion: gdp10.pdf: 34 chunks erstellt
+10 von 10 Dokumenten erfolgreich geladen
+431 Chunks in ChromaDB erstellt
+⠹ Lade Dokumente für Kurs 'gdp_test'...  [INFO] cli.phases.ingestion: Verifiziert: 10 Dokumente in ChromaDB
+✓ Kurs geladen: gdp_test (ID: 11)
+
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE 2: Kurs klassifizieren                                                                                                                                                               │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  Analysiere 10 Dokumente für Kurs-Klassifikation...
+    Lade Sample aus: gdp01.pdf
+⠋ Klassifiziere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 32 Chunks, 9127 Zeichen
+    Lade Sample aus: gdp02.pdf
+⠋ Klassifiziere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 67 Chunks, 19343 Zeichen
+    Lade Sample aus: gdp03.pdf
+⠋ Klassifiziere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 23 Chunks, 8438 Zeichen
+  Nutze claude-opus-4-1-20250805 für Klassifikation
+  [INFO] llm.evaluate.kompetenz_evaluator: Initialisiere LLM mit Model: claude-opus-4-1-20250805
+  [INFO] llm.evaluate.kompetenz_evaluator: Standard Model - temperature=0.1
+⠙ Klassifiziere mit claude-opus-4-1-20250805...  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (d:Document) REQUIRE d.doc_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (c:Competency) REQUIRE c.name IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (e:Exercise) REQUIRE e.exercise_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (l:LearningGoal) REQUIRE l.goal_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (lec:Lecture) REQUIRE lec.lecture_id IS UNIQUE
+  [INFO] llm.graph.graph_ingestion:  Embeddings für Kompetenz-Deduplikation aktiviert
+  [INFO] llm.evaluate.document_manager:  Graph-Integration aktiviert
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (d:Document) REQUIRE d.doc_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (c:Competency) REQUIRE c.name IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (e:Exercise) REQUIRE e.exercise_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (l:LearningGoal) REQUIRE l.goal_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (lec:Lecture) REQUIRE lec.lecture_id IS UNIQUE
+  [INFO] llm.graph.graph_ingestion:  Embeddings für Kompetenz-Deduplikation aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  KompetenzEvaluator erfolgreich initialisiert: claude-opus-4-1-20250805, RAG: True
+
+  Klassifiziere Kursinhalt (4560 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+  KURS-KLASSIFIKATION:
+    Fachbereich: Programmierung
+    Zielgruppe: Bachelor Grundstudium
+    Schwerpunkt: Theoretisch
+    Confidence: 0.90
+    Begründung: Der Kurs behandelt die Grundlagen der Programmierung, einschließlich Algorithmen und Programmiersprachen, was auf ein theoretisches Fundament abzielt, während auch praktische
+Aspekte der Programmierun...
+✓ Klassifikation erfolgreich
+
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE 3: Dokumente analysieren                                                                                                                                                             │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+======================================================================
+  PHASE 3: EINZELDOKUMENT-ANALYSE
+======================================================================
+  Nutze Prompts für Fachbereich: Programmierung
+  Nutze claude-opus-4-1-20250805 für Einzelanalyse
+  Analysiere 10 Dokumente...
+  [INFO] llm.evaluate.kompetenz_evaluator: Initialisiere LLM mit Model: claude-opus-4-1-20250805
+  [INFO] llm.evaluate.kompetenz_evaluator: Standard Model - temperature=0.1
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (d:Document) REQUIRE d.doc_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (c:Competency) REQUIRE c.name IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (e:Exercise) REQUIRE e.exercise_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (l:LearningGoal) REQUIRE l.goal_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (lec:Lecture) REQUIRE lec.lecture_id IS UNIQUE
+⠙ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  Embeddings für Kompetenz-Deduplikation aktiviert
+  [INFO] llm.evaluate.document_manager:  Graph-Integration aktiviert
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (d:Document) REQUIRE d.doc_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (c:Competency) REQUIRE c.name IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (e:Exercise) REQUIRE e.exercise_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (l:LearningGoal) REQUIRE l.goal_id IS UNIQUE
+  [INFO] llm.graph.neo4j_client: Constraint erstellt: CREATE CONSTRAINT IF NOT EXISTS FOR (lec:Lecture) REQUIRE lec.lecture_id IS UNIQUE
+  [INFO] llm.graph.graph_ingestion:  Embeddings für Kompetenz-Deduplikation aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  KompetenzEvaluator erfolgreich initialisiert: claude-opus-4-1-20250805, RAG: True
+
+  [1/10] Analysiere: gdp01.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp01.pdf
+⠙ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 32 Chunks, 9127 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Programmierung', 'Algorithmus', 'Programmiersprache', 'Programm', 'Informatik', 'Methoden', 'Denkweisen', 'Lösungsansätze']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (9127 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Einführung in Programmiergrundlagen und Algorithmen'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp01.pdf: 8 Kompetenzen, 8 Lernziele, Taxonomie: Verstehen (Stufe 2)
+
+ EXTRAHIERTE KOMPETENZEN (gdp01.pdf):
+   1. Grundkonzepte der Programmierung verstehen
+   2. Algorithmen entwickeln und analysieren
+   3. Unterscheidung zwischen Algorithmus und Programm
+   4. Programmiersprachen-Paradigmen kennen
+   5. Prozess der Softwareentwicklung verstehen
+   6. Struktogramme zur Algorithmus-Darstellung nutzen
+   7. Problemanalyse und -modellierung
+   8. Verschiedene Programmiersprachen-Generationen einordnen
+
+ LERNZIELE:
+   1. Programmierung als Problemlösungsmethode definieren
+   2. Algorithmen von Nicht-Algorithmen unterscheiden
+   3. Programme von Algorithmen abgrenzen
+   4. Entwicklung von Programmiersprachen nachvollziehen
+   5. Algorithmen in Struktogrammen darstellen
+
+ Taxonomie: Verstehen (Stufe 2)
+------------------------------------------------------------
+    Konsolidiere 8 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 8 Kompetenzen für gdp01.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 4 Kernkompetenzen
+      1. Verständnis der Grundkonzepte der Programmierung und der Unterscheidung zwischen Algorithmus und Programm
+      2. Entwicklung und Analyse von Algorithmen sowie Nutzung von Struktogrammen zur Algorithmus-Darstellung
+      3. Kenntnis der Programmiersprachen-Paradigmen und Einordnung der verschiedenen Programmiersprachen-Generationen
+      4. Verständnis des Prozesses der Softwareentwicklung und der Problemanalyse sowie -modellierung
+    → 4 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 4 Kompetenzen in Neo4j für gdp01.pdf
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis der Grundkonzepte der Programmierung und der Unterscheidung zwischen Algorithmus und Programm
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis der Grundkonzepte der Programmierung u...
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    0 von 0 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis der Grundkonzepte der Programmierung und der Unterscheidung zwischen Algorithmus und Programm
+⠹ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Entwicklung und Analyse von Algorithmen sowie Nutzung von Struktogrammen zur Algorithmus-Darstellung
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Entwicklung und Analyse von Algorithmen sowie Nutz...
+⠦ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    1 von 1 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 1 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Entwicklung und Analyse von Algorithmen sowie Nutzung von Struktogrammen zur Algorithmus-Darstellung
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Kenntnis der Programmiersprachen-Paradigmen und Einordnung der verschiedenen Programmiersprachen-Generationen
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Kenntnis der Programmiersprachen-Paradigmen und Ei...
+⠙ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+⠹ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    2 von 2 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 2 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Kenntnis der Programmiersprachen-Paradigmen und Einordnung der verschiedenen Programmiersprachen-Generationen
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis des Prozesses der Softwareentwicklung und der Problemanalyse sowie -modellierung
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis des Prozesses der Softwareentwicklung ...
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    3 von 3 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 3 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis des Prozesses der Softwareentwicklung und der Problemanalyse sowie -modellierung
+  [INFO] llm.evaluate.kompetenz_evaluator:  4 neue Kompetenzen erstellt für gdp01.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 8 Lernziele für gdp01.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  8 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Einführung in Programmiergrundlagen und Algorithmen' für gdp01.pdf
+4 Kompetenzen extrahiert
+
+  [2/10] Analysiere: gdp02.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp02.pdf
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 67 Chunks, 19343 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Java', 'Datentypen', 'Variablen', 'Operatoren', 'Literale', 'Programmiersprache', 'Arithmetische Ausdrücke', 'Logische Ausdrücke']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (19343 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Java-Datentypen und Operatoren'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp02.pdf: 8 Kompetenzen, 8 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp02.pdf):
+   1. Java-Grundlagen verstehen
+   2. Primitive Datentypen in Java verwenden
+   3. Variablen deklarieren und initialisieren
+   4. Arithmetische und logische Operatoren anwenden
+   5. Typkonvertierung und Casting durchführen
+   6. Java-Programmstruktur aufbauen
+   7. Ausdrücke und Literale verwenden
+   8. Wertzuweisungen und Typverträglichkeit beachten
+
+ LERNZIELE:
+   1. Java-Programme strukturieren und ausführbar machen
+   2. Variablen mit passenden Datentypen deklarieren
+   3. Wertebereiche von Datentypen bestimmen
+   4. Variablen initialisieren und Werte zuweisen
+   5. Arithmetische Ausdrücke bilden und berechnen
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 8 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 8 Kompetenzen für gdp02.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 3 Kernkompetenzen
+      1. Verständnis der Java-Grundlagen und Programmstruktur
+      2. Nutzung von primitiven Datentypen und Variablen in Java
+      3. Anwendung von arithmetischen und logischen Operatoren sowie Typkonvertierung
+    → 3 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 3 Kompetenzen in Neo4j für gdp02.pdf
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis der Java-Grundlagen und Programmstruktur
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis der Java-Grundlagen und Programmstrukt...
+⠙ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    4 von 4 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 4 Cache Hits
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis der Java-Grundlagen und Programmstruktur
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von primitiven Datentypen und Variablen in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von primitiven Datentypen und Variablen in...
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    5 von 5 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 5 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von primitiven Datentypen und Variablen in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Anwendung von arithmetischen und logischen Operatoren sowie Typkonvertierung
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Anwendung von arithmetischen und logischen Operato...
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    6 von 6 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 6 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Anwendung von arithmetischen und logischen Operatoren sowie Typkonvertierung
+  [INFO] llm.evaluate.kompetenz_evaluator:  3 neue Kompetenzen erstellt für gdp02.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 8 Lernziele für gdp02.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  8 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Java-Datentypen und Operatoren' für gdp02.pdf
+3 Kompetenzen extrahiert
+
+  [3/10] Analysiere: gdp03.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp03.pdf
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 23 Chunks, 8438 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Java', 'Strings', 'System.in', 'Datentyp', 'String-Literale', 'Konkatenation', 'Gleichheit von Strings', 'Programmierung']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (8438 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Strings und Benutzereingaben in Java'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp03.pdf: 8 Kompetenzen, 8 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp03.pdf):
+   1. String-Datentyp in Java verstehen und anwenden
+   2. String-Konkatenation mit + Operator
+   3. String-Vergleiche mit equals-Methode
+   4. Scanner-Klasse für Benutzereingaben nutzen
+   5. System.in für Konsoleneingaben verwenden
+   6. Unterscheidung zwischen primitiven Datentypen und Referenztypen
+   7. String-Literale und String-Variablen verwenden
+   8. Import von Java-Klassen (java.util.Scanner)
+
+ LERNZIELE:
+   1. String-Variablen deklarieren und initialisieren
+   2. Strings mit dem +-Operator konkatenieren
+   3. String-Vergleiche mit equals() durchführen
+   4. Scanner-Objekte für Eingaben erstellen
+   5. Verschiedene Datentypen über Scanner einlesen
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 8 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 8 Kompetenzen für gdp03.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 3 Kernkompetenzen
+      1. Verständnis und Anwendung des String-Datentyps in Java
+      2. Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+      3. Einsatz von String-Operationen wie Konkatenation und Vergleich
+    → 3 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 3 Kompetenzen in Neo4j für gdp03.pdf
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis und Anwendung des String-Datentyps in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis und Anwendung des String-Datentyps in ...
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    7 von 7 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 7 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis und Anwendung des String-Datentyps in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung der Scanner-Klasse und System.in für Benut...
+⠦ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    8 von 8 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 8 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von String-Operationen wie Konkatenation und Vergleich
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von String-Operationen wie Konkatenation u...
+⠹ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    9 von 9 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 9 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Einsatz von String-Operationen wie Konkatenation und Vergleich
+  [INFO] llm.evaluate.kompetenz_evaluator:  3 neue Kompetenzen erstellt für gdp03.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 8 Lernziele für gdp03.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  8 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Strings und Benutzereingaben in Java' für gdp03.pdf
+3 Kompetenzen extrahiert
+
+  [4/10] Analysiere: gdp04.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp04.pdf
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 62 Chunks, 18305 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Kontrollstrukturen', 'Java', 'Schleifen', 'if/else', 'Ternary Operator', 'switch/case', 'Sequenzen', 'Programmcode']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (18305 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Java-Kontrollstrukturen: Schleifen, Verzweigungen und Programmablauf'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp04.pdf: 10 Kompetenzen, 10 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp04.pdf):
+   1. Java-Kontrollstrukturen implementieren
+   2. Schleifen in Java programmieren (for, while, do-while)
+   3. Bedingte Verzweigungen mit if/else umsetzen
+   4. Switch/case-Statements anwenden
+   5. Ternary Operator verwenden
+   6. Programmablauf mit break und continue steuern
+   7. Sequenzielle Programmierung verstehen
+   8. Struktogramme interpretieren
+   9. Code-Optimierung durch Schleifen
+   10. Enhanced switch-Syntax nutzen (Java 12+)
+
+ LERNZIELE:
+   1. Kontrollstrukturen in Java identifizieren und unterscheiden
+   2. Sequenzen implementieren
+   3. for-, while- und do-while-Schleifen programmieren
+   4. Passende Schleifentypen für verschiedene Anwendungsfälle auswählen
+   5. Mit if/else-Statements verzweigen
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 10 Kompetenzen für gdp04.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 4 Kernkompetenzen
+      1. Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+      2. Anwendung von Schleifen und bedingten Verzweigungen zur Problemlösung in Java
+      3. Verständnis und Interpretation von Struktogrammen zur Visualisierung von Programmabläufen
+      4. Einsatz von modernen Java-Syntaxelementen wie Enhanced switch und Ternary Operator
+    → 4 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 4 Kompetenzen in Neo4j für gdp04.pdf
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von Kontrollstrukturen in Java zur Steueru...
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    10 von 10 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 10 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Anwendung von Schleifen und bedingten Verzweigungen zur Problemlösung in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Anwendung von Schleifen und bedingten Verzweigunge...
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    11 von 11 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 11 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Anwendung von Schleifen und bedingten Verzweigungen zur Problemlösung in Java
+⠇ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis und Interpretation von Struktogrammen zur Visualisierung von Programmabläufen
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis und Interpretation von Struktogrammen ...
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    12 von 12 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 12 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis und Interpretation von Struktogrammen zur Visualisierung von Programmabläufen
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von modernen Java-Syntaxelementen wie Enhanced switch und Ternary Operator
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von modernen Java-Syntaxelementen wie Enha...
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    13 von 13 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 13 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Einsatz von modernen Java-Syntaxelementen wie Enhanced switch und Ternary Operator
+  [INFO] llm.evaluate.kompetenz_evaluator:  4 neue Kompetenzen erstellt für gdp04.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 10 Lernziele für gdp04.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  10 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Java-Kontrollstrukturen: Schleifen, Verzweigungen und Programmablauf' für gdp04.pdf
+4 Kompetenzen extrahiert
+
+  [5/10] Analysiere: gdp05.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp05.pdf
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 38 Chunks, 13868 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Methoden', 'Parameter', 'Methodenaufruf', 'Java', 'Javadoc', 'Dokumentation', 'Code-Kommentare', 'Programmierung']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (13868 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Java-Methoden und Code-Dokumentation'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp05.pdf: 9 Kompetenzen, 9 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp05.pdf):
+   1. Java-Methoden definieren und implementieren
+   2. Methodenparameter und Rückgabewerte verwenden
+   3. Code-Modularisierung durch Methoden
+   4. Javadoc-Dokumentation erstellen
+   5. Code-Kommentierung in Java
+   6. Sichtbarkeitsmodifikatoren anwenden
+   7. Statische vs. nicht-statische Methoden unterscheiden
+   8. Clean Code Prinzipien (DRY - Don't Repeat Yourself)
+   9. API-Dokumentation verstehen und nutzen
+
+ LERNZIELE:
+   1. Methoden mit und ohne Parameter definieren
+   2. Methodenaufrufe durchführen
+   3. Return-Werte implementieren und verarbeiten
+   4. Code in wiederverwendbare Methoden refaktorieren
+   5. Javadoc-Kommentare schreiben
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 9 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 9 Kompetenzen für gdp05.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 5 Kernkompetenzen
+      1. Nutzung von Java-Methoden zur Code-Modularisierung und Implementierung
+      2. Anwendung von Methodenparametern und Rückgabewerten in Java
+      3. Erstellung von Javadoc-Dokumentation und Anwendung von Clean Code Prinzipien
+      4. Verständnis und Nutzung von Sichtbarkeitsmodifikatoren und statischen vs. nicht-statischen Methoden
+      5. Einsatz von API-Dokumentation zur Unterstützung der Softwareentwicklung
+    → 5 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 5 Kompetenzen in Neo4j für gdp05.pdf
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von Java-Methoden zur Code-Modularisierung und Implementierung
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von Java-Methoden zur Code-Modularisierung...
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    14 von 14 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 14 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von Java-Methoden zur Code-Modularisierung und Implementierung
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Anwendung von Methodenparametern und Rückgabewerten in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Anwendung von Methodenparametern und Rückgabewerte...
+⠙ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    15 von 15 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 15 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Anwendung von Methodenparametern und Rückgabewerten in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Erstellung von Javadoc-Dokumentation und Anwendung von Clean Code Prinzipien
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Erstellung von Javadoc-Dokumentation und Anwendung...
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    16 von 16 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 16 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Erstellung von Javadoc-Dokumentation und Anwendung von Clean Code Prinzipien
+⠦ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis und Nutzung von Sichtbarkeitsmodifikatoren und statischen vs. nicht-statischen Methoden
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis und Nutzung von Sichtbarkeitsmodifikat...
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    17 von 17 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 17 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis und Nutzung von Sichtbarkeitsmodifikatoren und statischen vs. nicht-statischen Methoden
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von API-Dokumentation zur Unterstützung der Softwareentwicklung
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von API-Dokumentation zur Unterstützung de...
+⠹ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    18 von 18 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 18 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Einsatz von API-Dokumentation zur Unterstützung der Softwareentwicklung
+  [INFO] llm.evaluate.kompetenz_evaluator:  5 neue Kompetenzen erstellt für gdp05.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 9 Lernziele für gdp05.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  9 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Java-Methoden und Code-Dokumentation' für gdp05.pdf
+5 Kompetenzen extrahiert
+
+  [6/10] Analysiere: gdp06.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp06.pdf
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 41 Chunks, 12394 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Array', 'Deklaration', 'Initialisierung', 'Iteration', 'mehrdimensionale Arrays', 'Datentyp', 'Primitive Datentypen', 'for-Schleife']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (12394 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Java Arrays und mehrdimensionale Datenstrukturen'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp06.pdf: 8 Kompetenzen, 8 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp06.pdf):
+   1. Java-Arrays programmieren
+   2. Datenstrukturen in Java implementieren
+   3. Array-Deklaration und -Initialisierung
+   4. Array-Manipulation und Indexzugriff
+   5. Iteration über Arrays (for-Schleifen)
+   6. Mehrdimensionale Arrays implementieren
+   7. Exception-Handling (ArrayIndexOutOfBoundsException)
+   8. Enhanced for-loop in Java nutzen
+
+ LERNZIELE:
+   1. Arrays deklarieren und initialisieren
+   2. Array-Elemente über Indizes lesen und schreiben
+   3. Arrays mit klassischen for-Schleifen iterieren
+   4. Enhanced for-loops für Array-Iteration verwenden
+   5. Mehrdimensionale Arrays erstellen und verarbeiten
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 8 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 8 Kompetenzen für gdp06.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 4 Kernkompetenzen
+      1. Nutzung von ein- und mehrdimensionalen Arrays in Java
+      2. Implementierung und Manipulation von Datenstrukturen in Java
+      3. Anwendung von Exception-Handling bei Array-Operationen
+      4. Einsatz von Iterationsmethoden für Arrays in Java
+    → 4 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 4 Kompetenzen in Neo4j für gdp06.pdf
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von ein- und mehrdimensionalen Arrays in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von ein- und mehrdimensionalen Arrays in J...
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    19 von 19 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 19 Cache Hits
+⠦ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von ein- und mehrdimensionalen Arrays in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Implementierung und Manipulation von Datenstrukturen in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Implementierung und Manipulation von Datenstruktur...
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    20 von 20 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 20 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Implementierung und Manipulation von Datenstrukturen in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Anwendung von Exception-Handling bei Array-Operationen
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Anwendung von Exception-Handling bei Array-Operati...
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    21 von 21 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 21 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Anwendung von Exception-Handling bei Array-Operationen
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von Iterationsmethoden für Arrays in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von Iterationsmethoden für Arrays in Java...
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    22 von 22 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 22 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Einsatz von Iterationsmethoden für Arrays in Java
+  [INFO] llm.evaluate.kompetenz_evaluator:  4 neue Kompetenzen erstellt für gdp06.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 8 Lernziele für gdp06.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  8 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Java Arrays und mehrdimensionale Datenstrukturen' für gdp06.pdf
+4 Kompetenzen extrahiert
+
+  [7/10] Analysiere: gdp07.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp07.pdf
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 49 Chunks, 18251 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Objektorientierung', 'Datentypen', 'Kontrollstrukturen', 'Methoden', 'Javadoc', 'Klasse', 'Encapsulation', 'Java']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (18251 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Objektorientierte Programmierung: Klassen und Objekte in Java'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp07.pdf: 10 Kompetenzen, 10 Lernziele, Taxonomie: Anwenden (Apply)
+
+ EXTRAHIERTE KOMPETENZEN (gdp07.pdf):
+   1. Objektorientierte Programmierung in Java
+   2. Klassendesign und -implementierung
+   3. Datenkapselung (Encapsulation)
+   4. Arbeiten mit Referenzdatentypen
+   5. Konstruktor-Programmierung
+   6. Getter/Setter-Methoden implementieren
+   7. Information Hiding anwenden
+   8. this-Referenz verstehen und nutzen
+   9. Unterscheidung Klasse vs. Objekt
+   10. Sichtbarkeitsmodifikatoren (public/private) einsetzen
+
+ LERNZIELE:
+   1. Java-Klassen mit Attributen und Methoden implementieren
+   2. Objekte von Klassen erzeugen und verwenden
+   3. Datenkapselung durch private Attribute umsetzen
+   4. Getter- und Setter-Methoden schreiben
+   5. Konstruktoren mit und ohne Parameter definieren
+
+ Taxonomie: Anwenden (Apply)
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 10 Kompetenzen für gdp07.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 4 Kernkompetenzen
+      1. Grundlagen der objektorientierten Programmierung in Java
+      2. Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+      3. Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+      4. Verständnis und Nutzung der this-Referenz sowie der Unterscheidung zwischen Klasse und Objekt
+    → 4 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 4 Kompetenzen in Neo4j für gdp07.pdf
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Grundlagen der objektorientierten Programmierung in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Grundlagen der objektorientierten Programmierung i...
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    23 von 23 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 23 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Grundlagen der objektorientierten Programmierung in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Klassendesign und -implementierung unter Berücksic...
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    24 von 24 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 24 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von Konstruktoren und Getter/Setter-Method...
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    25 von 25 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 25 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis und Nutzung der this-Referenz sowie der Unterscheidung zwischen Klasse und Objekt
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis und Nutzung der this-Referenz sowie de...
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    26 von 26 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 26 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis und Nutzung der this-Referenz sowie der Unterscheidung zwischen Klasse und Objekt
+  [INFO] llm.evaluate.kompetenz_evaluator:  4 neue Kompetenzen erstellt für gdp07.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 10 Lernziele für gdp07.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  10 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Objektorientierte Programmierung: Klassen und Objekte in Java' für gdp07.pdf
+4 Kompetenzen extrahiert
+
+  [8/10] Analysiere: gdp08.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp08.pdf
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 52 Chunks, 20601 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Objektorientierung', 'Vererbung', 'Oberklasse', 'Unterklasse', 'Methodenüberladung', 'Methodenüberschreibung', 'Klassenvariablen', 'Objektvariablen']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (20601 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Java OOP II: Vererbung, Static & Packages'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp08.pdf: 10 Kompetenzen, 10 Lernziele, Taxonomie: Anwenden (Bloom-Stufe 3)
+
+ EXTRAHIERTE KOMPETENZEN (gdp08.pdf):
+   1. Java-Vererbung implementieren
+   2. Klassenhierarchien in Java entwickeln
+   3. Methoden überschreiben mit @Override
+   4. Methoden und Konstruktoren überladen
+   5. Static-Konzept in Java anwenden
+   6. Klassen- vs. Objekteigenschaften unterscheiden
+   7. Java-Packages strukturieren
+   8. Klassen importieren und organisieren
+   9. Konstruktoren mit super() verketten
+   10. Final-Modifier einsetzen
+
+ LERNZIELE:
+   1. Vererbung zwischen Klassen implementieren
+   2. Ober- und Unterklassen definieren
+   3. Methoden überschreiben und überladen
+   4. Static-Methoden und -Variablen verwenden
+   5. Klassenvariablen von Objektvariablen unterscheiden
+
+ Taxonomie: Anwenden (Bloom-Stufe 3)
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 10 Kompetenzen für gdp08.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 4 Kernkompetenzen
+      1. Einsatz von Vererbung und Klassenhierarchien in Java
+      2. Anwendung von Methodenüberladung und -überschreibung in Java
+      3. Nutzung von Static- und Final-Modifiers in Java
+      4. Strukturierung und Organisation von Java-Packages
+    → 4 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 4 Kompetenzen in Neo4j für gdp08.pdf
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von Vererbung und Klassenhierarchien in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von Vererbung und Klassenhierarchien in Ja...
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    27 von 27 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 27 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Einsatz von Vererbung und Klassenhierarchien in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Anwendung von Methodenüberladung und -überschreibung in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Anwendung von Methodenüberladung und -überschreibu...
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    28 von 28 Kompetenzen für Kurs 'gdp_test' gefiltert
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 28 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Ähnliche Kompetenz gefunden: 'Anwendung von Methodenüberladung und -überschreibung in Java' → 'Anwendung von Methodenparametern und Rückgabewerten in Java' (Similarity: 0.76)
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von Static- und Final-Modifiers in Java
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von Static- und Final-Modifiers in Java...
+⠇ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    28 von 28 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 28 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von Static- und Final-Modifiers in Java
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Strukturierung und Organisation von Java-Packages
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Strukturierung und Organisation von Java-Packages...
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    29 von 29 Kompetenzen für Kurs 'gdp_test' gefiltert
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 29 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Strukturierung und Organisation von Java-Packages
+  [INFO] llm.evaluate.kompetenz_evaluator:  3 neue, 1 wiederverwendete Kompetenzen für gdp08.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 10 Lernziele für gdp08.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  10 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Java OOP II: Vererbung, Static & Packages' für gdp08.pdf
+4 Kompetenzen extrahiert
+
+  [9/10] Analysiere: gdp09.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp09.pdf
+⠴ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 33 Chunks, 10860 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Strings', 'String-Pool', 'String-Klasse', 'StringBuffer', 'Java', 'Zeichenketten', 'Objekte', 'Datentypen']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (10860 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Java Strings II: String-Pool, Vergleiche und StringBuffer'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp09.pdf: 7 Kompetenzen, 8 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp09.pdf):
+   1. Java String-Programmierung
+   2. Objektreferenzen und Speicherverwaltung verstehen
+   3. String-Pool-Konzept anwenden
+   4. String-Methoden der Java API nutzen
+   5. StringBuffer für veränderliche Zeichenketten einsetzen
+   6. Vergleichsoperationen für Referenztypen implementieren
+   7. Unterschiede zwischen primitiven und Referenzdatentypen verstehen
+
+ LERNZIELE:
+   1. Strings mit verschiedenen Methoden erstellen (Literal vs. new)
+   2. String-Pool-Mechanismus verstehen und nutzen
+   3. String-Inhalte mit equals() vergleichen
+   4. Objektreferenzen mit == vergleichen
+   5. String-Methoden anwenden (toUpperCase, charAt, length, etc.)
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 7 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 7 Kompetenzen für gdp09.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 3 Kernkompetenzen
+      1. Nutzung von Java String-Programmierung und String-Methoden der Java API
+      2. Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten
+      3. Verständnis von Objektreferenzen, Speicherverwaltung und den Unterschieden zwischen primitiven und Referenzdatentypen
+    → 3 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 3 Kompetenzen in Neo4j für gdp09.pdf
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von Java String-Programmierung und String-Methoden der Java API
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von Java String-Programmierung und String-...
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    30 von 30 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 30 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von Java String-Programmierung und String-Methoden der Java API
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Anwendung des String-Pool-Konzepts und von StringB...
+⠦ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    31 von 31 Kompetenzen für Kurs 'gdp_test' gefiltert
+⠇ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 31 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Verständnis von Objektreferenzen, Speicherverwaltung und den Unterschieden zwischen primitiven und Referenzdatentypen
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Verständnis von Objektreferenzen, Speicherverwaltu...
+⠙ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    32 von 32 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 32 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Verständnis von Objektreferenzen, Speicherverwaltung und den Unterschieden zwischen primitiven und Referenzdatentypen
+  [INFO] llm.evaluate.kompetenz_evaluator:  3 neue Kompetenzen erstellt für gdp09.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 8 Lernziele für gdp09.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  8 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Java Strings II: String-Pool, Vergleiche und StringBuffer' für gdp09.pdf
+3 Kompetenzen extrahiert
+
+  [10/10] Analysiere: gdp10.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Starte Dokumentanalyse: gdp10.pdf
+⠸ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.evaluate.document_manager:  Dokument rekonstruiert: 34 Chunks, 8997 Zeichen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Klassifiziere Kursinhalt...
+
+ RAG KEYWORDS: ['Git', 'Versionsverwaltung', 'Commit', 'Push', 'Pull', 'Codeverwaltung', 'Zusammenarbeit', 'Codeänderungen']
+  [INFO] llm.evaluate.kompetenz_evaluator:  Spezialisierter Programmierung-Prompt aktiviert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Sende Dokumentanalyse an LLM (8997 Zeichen)...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel extrahiert: 'Git-Versionsverwaltung und kollaborative Entwicklung'
+  [INFO] llm.evaluate.kompetenz_evaluator:  gdp10.pdf: 7 Kompetenzen, 11 Lernziele, Taxonomie: Anwenden
+
+ EXTRAHIERTE KOMPETENZEN (gdp10.pdf):
+   1. Git-Versionsverwaltung
+   2. Repository-Management
+   3. Kollaborative Softwareentwicklung
+   4. IDE-Integration von Git
+   5. GitHub-Plattformnutzung
+   6. Code-Versionierung
+   7. Änderungsmanagement in Softwareprojekten
+
+ LERNZIELE:
+   1. Git-Repositories clonen und verwalten
+   2. Dateien mit Git add hinzufügen
+   3. Änderungen mit Git commit versionieren
+   4. Code-Änderungen mit Git push hochladen
+   5. Änderungen mit Git pull synchronisieren
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 7 Kompetenzen...
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiere 7 Kompetenzen für gdp10.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Konsolidiert zu 3 Kernkompetenzen
+      1. Nutzung von Git für Versionsverwaltung und Änderungsmanagement in Softwareprojekten
+      2. Einsatz von Repository-Management und kollaborativer Softwareentwicklung mit Git und GitHub
+      3. Integration von Git in Entwicklungsumgebungen (IDEs) zur Optimierung des Entwicklungsprozesses
+    → 3 konsolidierte Kompetenzen
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 3 Kompetenzen in Neo4j für gdp10.pdf
+⠏ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Nutzung von Git für Versionsverwaltung und Änderungsmanagement in Softwareprojekten
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Nutzung von Git für Versionsverwaltung und Änderun...
+⠦ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    33 von 33 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 33 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Nutzung von Git für Versionsverwaltung und Änderungsmanagement in Softwareprojekten
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Einsatz von Repository-Management und kollaborativer Softwareentwicklung mit Git und GitHub
+⠧ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Einsatz von Repository-Management und kollaborativ...
+⠼ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    34 von 34 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 34 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Ähnliche Kompetenz gefunden: 'Einsatz von Repository-Management und kollaborativer Softwareentwicklung mit Git und GitHub' → 'Nutzung von Git für Versionsverwaltung und Änderungsmanagement in Softwareprojekten' (Similarity: 0.75)
+  [INFO] llm.graph.graph_ingestion:  create_or_get_similar_competency START: Integration von Git in Entwicklungsumgebungen (IDEs) zur Optimierung des Entwicklungsprozesses
+  [INFO] llm.graph.graph_ingestion:    Generiere Embedding für neue Kompetenz: Integration von Git in Entwicklungsumgebungen (IDE...
+⠋ Analysiere mit claude-opus-4-1-20250805...  [INFO] llm.graph.graph_ingestion:    Embedding generiert (Länge: 3072)
+  [INFO] llm.graph.graph_ingestion:    Lade existierende Kompetenzen aus Neo4j...
+  [INFO] llm.graph.graph_ingestion:    34 von 34 Kompetenzen für Kurs 'gdp_test' gefiltert
+  [INFO] llm.graph.graph_ingestion:    Embedding-Stats: 0 API Calls, 34 Cache Hits
+  [INFO] llm.graph.graph_ingestion:  Neue Kompetenz erstellt: Integration von Git in Entwicklungsumgebungen (IDEs) zur Optimierung des Entwicklungsprozesses
+  [INFO] llm.evaluate.kompetenz_evaluator:  2 neue, 1 wiederverwendete Kompetenzen für gdp10.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  Speichere 11 Lernziele für gdp10.pdf
+  [INFO] llm.evaluate.kompetenz_evaluator:  11 Lernziele in Neo4j gespeichert
+  [INFO] llm.evaluate.kompetenz_evaluator:  Topic-Titel gespeichert: 'Git-Versionsverwaltung und kollaborative Entwicklung' für gdp10.pdf
+3 Kompetenzen extrahiert
+
+  ANALYSE-ZUSAMMENFASSUNG:
+    Erfolgreiche Analysen: 10/10
+    Gesamt extrahierte Kompetenzen: 37
+✓ 10 Dokumente analysiert
+  [INFO] cli.dev_cache: Analyse für gdp_test wurde gecached
+
+
+✓ Pipeline abgeschlossen - Menü wird wieder angezeigt
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? Assignment-Analyse
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE T: Assignment-Analyse für gdp_test                                                                                                                                                   │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  Suche Kurs: gdp_test
+  [INFO] llm.moodle.course_downloader: Found course: gdp_test (ID: 11)
+Gefunden: gdp_test (ID: 11)
+
+  Hole Assignments...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+2 Assignment(s) gefunden:
+
+? Welches Assignment analysieren? 1. Dein erstes Hallo Welt Programm - Baue ein Hallo welt Programm in java. Es soll ausgeführt wer...
+
+  Analysiere: Dein erstes Hallo Welt Programm
+  Beschreibung: Baue ein Hallo welt Programm in java. Es soll ausgeführt werden können und anschlißend soll der String "Hello World!" angezeigt werden....
+
+  Nutze claude-opus-4-1-20250805 für Kompetenz-Matching...
+  [INFO] llm.evaluate.assignment_matcher:  AssignmentCompetencyMatcher initialisiert mit claude-opus-4-1-20250805
+  Suche existierende Kompetenzen in Neo4j...
+  [INFO] llm.evaluate.assignment_matcher:  Neo4j Query erfolgreich: 35 Zeilen zurückgegeben
+  [INFO] llm.evaluate.assignment_matcher:  35 Kompetenzen aus Neo4j geladen für Kurs gdp_test
+35 Kompetenzen verfügbar
+
+  Beispiel-Kompetenzen aus dem Kurs:
+    1. Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten
+    2. Anwendung von Exception-Handling bei Array-Operationen
+    3. Anwendung von Methodenparametern und Rückgabewerten in Java
+    ... und 32 weitere
+
+  Lasse claude-opus-4-1-20250805 passende Kompetenzen auswählen...
+  [INFO] llm.evaluate.assignment_matcher:  Neo4j Query erfolgreich: 35 Zeilen zurückgegeben
+  [INFO] llm.evaluate.assignment_matcher:  35 Kompetenzen aus Neo4j geladen für Kurs gdp_test
+  [INFO] llm.evaluate.assignment_matcher:  LLM RESPONSE:
+  [INFO] llm.evaluate.assignment_matcher: ============================================================
+  [INFO] llm.evaluate.assignment_matcher: {
+    "selected_competencies": [
+        "Verständnis der Java-Grundlagen und Programmstruktur",
+        "Verständnis und Anwendung des String-Datentyps in Java"
+    ],
+    "assignment_title": "Erstes Hello World Programm",
+    "reasoning": "Ein Hello World Programm ist die grundlegendste Java-Anwendung, die primär das Verständnis der Java-Programmstruktur (main-Methode, Klassenaufbau) und die Ausgabe eines Strings demonstriert. Andere Kompetenzen wie Variablen, Operatoren oder Kontrollstrukturen werden nicht benötigt."
+}
+  [INFO] llm.evaluate.assignment_matcher: ============================================================
+  [INFO] llm.evaluate.assignment_matcher:  2 Kompetenzen für Assignment 'Dein erstes Hallo Welt Programm' ausgewählt
+  [INFO] llm.evaluate.assignment_matcher:    Neuer Titel: 'Erstes Hello World Programm'
+  [INFO] llm.evaluate.assignment_matcher:    Begründung: Ein Hello World Programm ist die grundlegendste Java-Anwendung, die primär das Verständnis der Java-Programmstruktur (main-Methode, Klassenaufbau) und die Ausgabe eines Strings demonstriert. Andere Kompetenzen wie Variablen, Operatoren oder Kontrollstrukturen werden nicht benötigt.
+  [INFO] llm.evaluate.assignment_matcher:  DEBUG MATCHING:
+  [INFO] llm.evaluate.assignment_matcher:  Verfügbare IDs aus Neo4j (erste 5 von 35):
+  [INFO] llm.evaluate.assignment_matcher:    [0] 'Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten'
+  [INFO] llm.evaluate.assignment_matcher:    [1] 'Anwendung von Exception-Handling bei Array-Operationen'
+  [INFO] llm.evaluate.assignment_matcher:    [2] 'Anwendung von Methodenparametern und Rückgabewerten in Java'
+  [INFO] llm.evaluate.assignment_matcher:    [3] 'Anwendung von Schleifen und bedingten Verzweigungen zur Problemlösung in Java'
+  [INFO] llm.evaluate.assignment_matcher:    [4] 'Anwendung von arithmetischen und logischen Operatoren sowie Typkonvertierung'
+  [INFO] llm.evaluate.assignment_matcher:  LLM hat 2 IDs zurückgegeben:
+  [INFO] llm.evaluate.assignment_matcher:    [0] 'Verständnis der Java-Grundlagen und Programmstruktur'
+  [INFO] llm.evaluate.assignment_matcher:    [1] 'Verständnis und Anwendung des String-Datentyps in Java'
+  [INFO] llm.evaluate.assignment_matcher:  2 REQUIRES Beziehungen erstellt
+
+2 Kompetenzen zugeordnet:
+    1. Verständnis der Java-Grundlagen und Programmstruktur
+    2. Verständnis und Anwendung des String-Datentyps in Java
+
+  Neo4j Graph-Struktur erstellt:
+    Assignment: Dein erstes Hallo Welt Programm
+    └── REQUIRES → 2 Kompetenzen
+
+
+✓ Assignment 'Dein erstes Hallo Welt Programm' erfolgreich analysiert
+ℹ 2 Kompetenzen zugeordnet
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? Assignment-Analyse
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE T: Assignment-Analyse für gdp_test                                                                                                                                                   │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  Suche Kurs: gdp_test
+  [INFO] llm.moodle.course_downloader: Found course: gdp_test (ID: 11)
+Gefunden: gdp_test (ID: 11)
+
+  Hole Assignments...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+2 Assignment(s) gefunden:
+
+? Welches Assignment analysieren? 2. Java Nutzerverwaltung - Erstellen Sie ein Java-Programm zur Verwaltung von Benutzern...
+
+  Analysiere: Java Nutzerverwaltung
+  Beschreibung: Erstellen Sie ein Java-Programm zur Verwaltung von Benutzern mit Rollen. Jeder Benutzer hat einen Namen und eine Rolle (“admin” oder “user”). Die Benutzer sollen in einer geeigneten Datenstruktur gesp...
+
+  Nutze claude-opus-4-1-20250805 für Kompetenz-Matching...
+  [INFO] llm.evaluate.assignment_matcher:  AssignmentCompetencyMatcher initialisiert mit claude-opus-4-1-20250805
+  Suche existierende Kompetenzen in Neo4j...
+  [INFO] llm.evaluate.assignment_matcher:  Neo4j Query erfolgreich: 35 Zeilen zurückgegeben
+  [INFO] llm.evaluate.assignment_matcher:  35 Kompetenzen aus Neo4j geladen für Kurs gdp_test
+35 Kompetenzen verfügbar
+
+  Beispiel-Kompetenzen aus dem Kurs:
+    1. Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten
+    2. Anwendung von Exception-Handling bei Array-Operationen
+    3. Anwendung von Methodenparametern und Rückgabewerten in Java
+    ... und 32 weitere
+
+  Lasse claude-opus-4-1-20250805 passende Kompetenzen auswählen...
+  [INFO] llm.evaluate.assignment_matcher:  Neo4j Query erfolgreich: 35 Zeilen zurückgegeben
+  [INFO] llm.evaluate.assignment_matcher:  35 Kompetenzen aus Neo4j geladen für Kurs gdp_test
+  [INFO] llm.evaluate.assignment_matcher:  LLM RESPONSE:
+  [INFO] llm.evaluate.assignment_matcher: ============================================================
+  [INFO] llm.evaluate.assignment_matcher: {
+    "selected_competencies": [
+        "Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren",
+        "Nutzung der Scanner-Klasse und System.in für Benutzereingaben",
+        "Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs",
+        "Implementierung und Manipulation von Datenstrukturen in Java",
+        "Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation"
+    ],
+    "assignment_title": "Java Nutzerverwaltung mit Rollen",
+    "reasoning": "Die Aufgabe erfordert primär: OOP-Design mit User-Klasse inkl. Datenkapselung (private Felder, public Methoden), Scanner für Konsoleneingaben, Kontrollstrukturen für Menüsteuerung und Validierung, ArrayList als Datenstruktur für User-Objekte, sowie Konstruktoren/Getter/Setter für die User-Klasse. Diese Kompetenzen bilden den Kern der Aufgabenstellung."
+}
+  [INFO] llm.evaluate.assignment_matcher: ============================================================
+  [INFO] llm.evaluate.assignment_matcher:  5 Kompetenzen für Assignment 'Java Nutzerverwaltung' ausgewählt
+  [INFO] llm.evaluate.assignment_matcher:    Neuer Titel: 'Java Nutzerverwaltung mit Rollen'
+  [INFO] llm.evaluate.assignment_matcher:    Begründung: Die Aufgabe erfordert primär: OOP-Design mit User-Klasse inkl. Datenkapselung (private Felder, public Methoden), Scanner für Konsoleneingaben, Kontrollstrukturen für Menüsteuerung und Validierung, ArrayList als Datenstruktur für User-Objekte, sowie Konstruktoren/Getter/Setter für die User-Klasse. Diese Kompetenzen bilden den Kern der Aufgabenstellung.
+  [INFO] llm.evaluate.assignment_matcher:  DEBUG MATCHING:
+  [INFO] llm.evaluate.assignment_matcher:  Verfügbare IDs aus Neo4j (erste 5 von 35):
+  [INFO] llm.evaluate.assignment_matcher:    [0] 'Anwendung des String-Pool-Konzepts und von StringBuffer für veränderliche Zeichenketten'
+  [INFO] llm.evaluate.assignment_matcher:    [1] 'Anwendung von Exception-Handling bei Array-Operationen'
+  [INFO] llm.evaluate.assignment_matcher:    [2] 'Anwendung von Methodenparametern und Rückgabewerten in Java'
+  [INFO] llm.evaluate.assignment_matcher:    [3] 'Anwendung von Schleifen und bedingten Verzweigungen zur Problemlösung in Java'
+  [INFO] llm.evaluate.assignment_matcher:    [4] 'Anwendung von arithmetischen und logischen Operatoren sowie Typkonvertierung'
+  [INFO] llm.evaluate.assignment_matcher:  LLM hat 5 IDs zurückgegeben:
+  [INFO] llm.evaluate.assignment_matcher:    [0] 'Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren'
+  [INFO] llm.evaluate.assignment_matcher:    [1] 'Nutzung der Scanner-Klasse und System.in für Benutzereingaben'
+  [INFO] llm.evaluate.assignment_matcher:    [2] 'Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs'
+  [INFO] llm.evaluate.assignment_matcher:    [3] 'Implementierung und Manipulation von Datenstrukturen in Java'
+  [INFO] llm.evaluate.assignment_matcher:    [4] 'Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation'
+  [INFO] llm.evaluate.assignment_matcher:  5 REQUIRES Beziehungen erstellt
+
+5 Kompetenzen zugeordnet:
+    1. Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+    2. Implementierung und Manipulation von Datenstrukturen in Java
+    3. Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+    4. Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+    5. Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+
+  Neo4j Graph-Struktur erstellt:
+    Assignment: Java Nutzerverwaltung
+    └── REQUIRES → 5 Kompetenzen
+
+
+✓ Assignment 'Java Nutzerverwaltung' erfolgreich analysiert
+ℹ 5 Kompetenzen zugeordnet
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? Kompetenzen nach Moodle uploaden
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE U: Moodle Upload für gdp_test                                                                                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+35 Kompetenzen in Neo4j gefunden
+  Teste Moodle-Verbindung...
+Verbunden mit: BA-Test-Moodle
+
+  Suche Kurs 'gdp_test' in Moodle...
+Kurs gefunden: gdp_test (ID: 11)
+
+  Starte Upload...
+  ----------------------------------------
+  [INFO] llm.moodle.competency_uploader:  Starte Kompetenz-Upload für gdp_test
+  [INFO] llm.moodle.competency_uploader:  Competency Framework erstellt: ID=34, Name=framework_gdp_test
+  [WARNING] llm.moodle.competency_uploader:  Keine ThemeCluster gefunden, lade Kompetenzen ohne Hierarchie
+  [INFO] llm.moodle.competency_uploader:  Geladen: 1 Cluster mit insgesamt 35 Kompetenzen
+  [INFO] llm.moodle.competency_uploader:  Lade 1 Themenbereiche nach Moodle...
+  [INFO] llm.moodle.competency_uploader:    Themenbereich erstellt: Allgemeine Kompetenzen
+  [INFO] llm.moodle.competency_uploader:  Upload abgeschlossen: 1 Themenbereiche, 35 Kompetenzen
+  [INFO] llm.moodle.competency_uploader:  Aktualisiere Neo4j mit Moodle IDs...
+  [INFO] llm.moodle.competency_uploader:  35/36 Kompetenzen in Neo4j aktualisiert
+  [INFO] llm.moodle.competency_uploader:  36/36 Kompetenzen mit Kurs verknüpft
+  [INFO] llm.moodle.competency_uploader:  Lade Moodle Assignments...
+  [INFO] llm.moodle.competency_uploader:   Gefunden: 2 Assignments in Moodle
+  [INFO] llm.moodle.competency_uploader:  2 Assignment-Mappings in Neo4j gefunden
+  [INFO] llm.moodle.competency_uploader:  7 Assignment-Kompetenz Verknüpfungen erstellt
+
+  ----------------------------------------
+     UPLOAD ERFOLGREICH!
+    Framework ID: 34
+    Themenbereiche: 1
+    Kompetenzen: 36
+    Mit Kurs verknüpft: Ja
+    Assignment-Mappings: 7
+
+  Aktualisiere Topic-Summaries mit Lernzielen...
+  [INFO] llm.moodle.topic_updater: Starte Topic-Update für Kurs gdp_test
+  [INFO] llm.moodle.topic_updater:   gdp01.pdf: 8 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp02.pdf: 8 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp03.pdf: 8 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp04.pdf: 10 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp05.pdf: 9 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp06.pdf: 8 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp07.pdf: 10 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp08.pdf: 10 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp09.pdf: 8 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp10.pdf: 11 Lernziele gefunden
+  [INFO] llm.moodle.topic_updater:   gdp01.pdf: Topic-Titel 'Einführung in Programmiergrundlagen und Algorithmen'
+  [INFO] llm.moodle.topic_updater:   gdp02.pdf: Topic-Titel 'Java-Datentypen und Operatoren'
+  [INFO] llm.moodle.topic_updater:   gdp03.pdf: Topic-Titel 'Strings und Benutzereingaben in Java'
+  [INFO] llm.moodle.topic_updater:   gdp04.pdf: Topic-Titel 'Java-Kontrollstrukturen: Schleifen, Verzweigungen und Programmablauf'
+  [INFO] llm.moodle.topic_updater:   gdp05.pdf: Topic-Titel 'Java-Methoden und Code-Dokumentation'
+  [INFO] llm.moodle.topic_updater:   gdp06.pdf: Topic-Titel 'Java Arrays und mehrdimensionale Datenstrukturen'
+  [INFO] llm.moodle.topic_updater:   gdp07.pdf: Topic-Titel 'Objektorientierte Programmierung: Klassen und Objekte in Java'
+  [INFO] llm.moodle.topic_updater:   gdp08.pdf: Topic-Titel 'Java OOP II: Vererbung, Static & Packages'
+  [INFO] llm.moodle.topic_updater:   gdp09.pdf: Topic-Titel 'Java Strings II: String-Pool, Vergleiche und StringBuffer'
+  [INFO] llm.moodle.topic_updater:   gdp10.pdf: Topic-Titel 'Git-Versionsverwaltung und kollaborative Entwicklung'
+  [INFO] llm.moodle.topic_updater:   Assignment 'Dein erstes Hallo Welt Programm': Titel 'Erstes Hello World Programm'
+  [INFO] llm.moodle.topic_updater:   Assignment 'Java Nutzerverwaltung': Titel 'Java Nutzerverwaltung mit Rollen'
+  [INFO] llm.moodle.topic_updater: Assignment-Titel geladen: 2 gefunden
+  [INFO] llm.moodle.topic_updater:   Dokument gdp01.pdf gefunden in Section 0
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Einführung in Programmiergrundlagen und Algorithmen' für Section 0
+  [INFO] llm.moodle.topic_updater:   Topic 0 aktualisiert mit 8 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp02.pdf gefunden in Section 1
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Java-Datentypen und Operatoren' für Section 1
+  [INFO] llm.moodle.topic_updater:   Topic 1 aktualisiert mit 8 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp03.pdf gefunden in Section 2
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Strings und Benutzereingaben in Java' für Section 2
+  [INFO] llm.moodle.topic_updater:   Topic 2 aktualisiert mit 8 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp04.pdf gefunden in Section 4
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Java-Kontrollstrukturen: Schleifen, Verzweigungen und Programmablauf' für Section 4
+  [INFO] llm.moodle.topic_updater:   Topic 4 aktualisiert mit 10 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp05.pdf gefunden in Section 5
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Java-Methoden und Code-Dokumentation' für Section 5
+  [INFO] llm.moodle.topic_updater:   Topic 5 aktualisiert mit 9 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp06.pdf gefunden in Section 6
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Java Arrays und mehrdimensionale Datenstrukturen' für Section 6
+  [INFO] llm.moodle.topic_updater:   Topic 6 aktualisiert mit 8 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp07.pdf gefunden in Section 7
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Objektorientierte Programmierung: Klassen und Objekte in Java' für Section 7
+  [INFO] llm.moodle.topic_updater:   Topic 7 aktualisiert mit 10 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp08.pdf gefunden in Section 9
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Java OOP II: Vererbung, Static & Packages' für Section 9
+  [INFO] llm.moodle.topic_updater:   Topic 9 aktualisiert mit 10 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp09.pdf gefunden in Section 10
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Java Strings II: String-Pool, Vergleiche und StringBuffer' für Section 10
+  [INFO] llm.moodle.topic_updater:   Topic 10 aktualisiert mit 8 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Dokument gdp10.pdf gefunden in Section 11
+  [INFO] llm.moodle.topic_updater:   Setze Topic-Name: 'Git-Versionsverwaltung und kollaborative Entwicklung' für Section 11
+  [INFO] llm.moodle.topic_updater:   Topic 11 aktualisiert mit 11 Lernzielen
+  [INFO] llm.moodle.topic_updater:   Assignment 'Dein erstes Hallo Welt Programm' gefunden in Section 3
+  [INFO] llm.moodle.topic_updater:   Topic 3 Name aktualisiert für Assignment: 'Erstes Hello World Programm'
+  [INFO] llm.moodle.topic_updater:   Assignment 'Java Nutzerverwaltung' gefunden in Section 8
+  [INFO] llm.moodle.topic_updater:   Topic 8 Name aktualisiert für Assignment: 'Java Nutzerverwaltung mit Rollen'
+    Topics aktualisiert: 12
+
+  Moodle-Links:
+    Framework: https://moodle.lucafriedrich.com/admin/tool/lp/competencyframeworks.php
+    Kurs-Kompetenzen: https://moodle.lucafriedrich.com/admin/tool/lp/coursecompetencies.php?courseid=11
+
+
+✓ Upload erfolgreich abgeschlossen
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? Submission-Bewertung
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE G: Submission Grading für gdp_test                                                                                                                                                   │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  Suche Kurs: gdp_test
+  [INFO] llm.moodle.course_downloader: Found course: gdp_test (ID: 11)
+Gefunden: gdp_test (ID: 11)
+
+  Lade Submissions...
+  [INFO] llm.moodle.course_downloader: Downloading assignment submissions to: test_submissions/submissions
+  [INFO] llm.moodle.course_downloader: Processing assignment: Dein erstes Hallo Welt Programm
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 4: HelloWorld.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_4/assignment_Dein erstes Hallo Welt Programm/HelloWorld.java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 5: HalloWelt(1).java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_5/assignment_Dein erstes Hallo Welt Programm/HalloWelt(1).java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 6: HelloWorld_abgabe.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_6/assignment_Dein erstes Hallo Welt Programm/HelloWorld_abgabe.java
+  [INFO] llm.moodle.course_downloader: Processing assignment: Java Nutzerverwaltung
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 4: BenutzerVerwaltung.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_4/assignment_Java Nutzerverwaltung/BenutzerVerwaltung.java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 5: user(2).java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_5/assignment_Java Nutzerverwaltung/user(2).java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 6: UserManager.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_6/assignment_Java Nutzerverwaltung/UserManager.java
+  [INFO] llm.moodle.course_downloader: Downloaded 6 submission files from 2 assignments
+
+  Assignments mit Submissions:
+? Welches Assignment bewerten? 1. Dein erstes Hallo Welt Programm (3 Submission(s))
+
+  3 Submission(s) für 'Dein erstes Hallo Welt Programm':
+? Welche Submission bewerten? Alle bewerten
+
+  Bewerte 3 Submissions...
+2 Kompetenzen pro Submission
+
+  [1/3] Bewerte user_4...
+
+  Bewerte Submission...
+  Datei: HelloWorld.java
+  User: user_4
+2 Kompetenzen zu bewerten
+
+  Bewerte mit claude-opus-4-1-20250805...
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [1/2] Verständnis der Java-Grundlagen und Programmstruktur... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [2/2] Verständnis und Anwendung des String-Datentyps in Java... ✗
+
+  ========================================
+  BEWERTUNGSERGEBNIS
+  ========================================
+  Kompetenzen erreicht: 1/2
+  Erfolgsquote: 50.0%
+
+  Details:
+  ✓ Verständnis der Java-Grundlagen und Programmstruktur
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Ergänze deinen Code mit einem einzeiligen Kommentar über der Klasse (z.B. '// Mein erstes Java-Progr...
+  ✗ Verständnis und Anwendung des String-Datentyps in Java
+     Erfüllungsgrad: oberflächlich
+     Tipp: Erweitere dein Programm um eine String-Variable, z.B.: String greeting = "Hello"; String name = "Wor...
+
+  Speichere Feedback in Moodle...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+  [INFO] cli.phases.grading: Feedback für User 4 gespeichert (Note: 50%)
+Feedback in Moodle gespeichert
+
+  Markiere Kompetenzen in Moodle...
+  [INFO] cli.phases.grading: Kompetenz 'Verständnis der Java-Grundlagen und Programmstruktur' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Verständnis und Anwendung des String-Datentyps in Java' als nicht erreicht markiert
+2 Kompetenzen in Moodle markiert
+     → 1/2 (50%)
+
+  [2/3] Bewerte user_5...
+
+  Bewerte Submission...
+  Datei: HalloWelt(1).java
+  User: user_5
+2 Kompetenzen zu bewerten
+
+  Bewerte mit claude-opus-4-1-20250805...
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [1/2] Verständnis der Java-Grundlagen und Programmstruktur... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [2/2] Verständnis und Anwendung des String-Datentyps in Java... ✗
+
+  ========================================
+  BEWERTUNGSERGEBNIS
+  ========================================
+  Kompetenzen erreicht: 1/2
+  Erfolgsquote: 50.0%
+
+  Details:
+  ✓ Verständnis der Java-Grundlagen und Programmstruktur
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Ergänze deinen Code mit einzeiligen Kommentaren (// ...) oder einem Klassenkommentar (/** ... */), u...
+  ✗ Verständnis und Anwendung des String-Datentyps in Java
+     Erfüllungsgrad: oberflächlich
+     Tipp: Erweitere dein Programm um eine String-Variable, z.B.: String begruessung = 'Hallo'; String name = '...
+
+  Speichere Feedback in Moodle...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+  [INFO] cli.phases.grading: Feedback für User 5 gespeichert (Note: 50%)
+Feedback in Moodle gespeichert
+
+  Markiere Kompetenzen in Moodle...
+  [INFO] cli.phases.grading: Kompetenz 'Verständnis der Java-Grundlagen und Programmstruktur' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Verständnis und Anwendung des String-Datentyps in Java' als nicht erreicht markiert
+2 Kompetenzen in Moodle markiert
+     → 1/2 (50%)
+
+  [3/3] Bewerte user_6...
+
+  Bewerte Submission...
+  Datei: HelloWorld_abgabe.java
+  User: user_6
+2 Kompetenzen zu bewerten
+
+  Bewerte mit claude-opus-4-1-20250805...
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [1/2] Verständnis der Java-Grundlagen und Programmstruktur... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [2/2] Verständnis und Anwendung des String-Datentyps in Java... ✓
+
+  ========================================
+  BEWERTUNGSERGEBNIS
+  ========================================
+  Kompetenzen erreicht: 2/2
+  Erfolgsquote: 100.0%
+
+  Details:
+  ✓ Verständnis der Java-Grundlagen und Programmstruktur
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Experimentiere mit verschiedenen Datentypen! Ergänze zum Beispiel eine int-Variable für das aktuelle...
+  ✓ Verständnis und Anwendung des String-Datentyps in Java
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Experimentiere mit weiteren String-Methoden wie .length(), .toUpperCase() oder .charAt(). Zum Beispi...
+
+  Speichere Feedback in Moodle...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+  [INFO] cli.phases.grading: Feedback für User 6 gespeichert (Note: 100%)
+Feedback in Moodle gespeichert
+
+  Markiere Kompetenzen in Moodle...
+  [INFO] cli.phases.grading: Kompetenz 'Verständnis der Java-Grundlagen und Programmstruktur' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Verständnis und Anwendung des String-Datentyps in Java' als erreicht markiert
+2 Kompetenzen in Moodle markiert
+     → 2/2 (100%)
+
+  ========================================
+  GESAMTÜBERSICHT
+  ========================================
+  🟡 user_4: 1/2 (50%)
+  🟡 user_5: 1/2 (50%)
+  🟢 user_6: 2/2 (100%)
+
+
+✓ 3 Submissions bewertet
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? Submission-Bewertung
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE G: Submission Grading für gdp_test                                                                                                                                                   │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  Suche Kurs: gdp_test
+  [INFO] llm.moodle.course_downloader: Found course: gdp_test (ID: 11)
+Gefunden: gdp_test (ID: 11)
+
+  Lade Submissions...
+  [INFO] llm.moodle.course_downloader: Downloading assignment submissions to: test_submissions/submissions
+  [INFO] llm.moodle.course_downloader: Processing assignment: Dein erstes Hallo Welt Programm
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 4: HelloWorld.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_4/assignment_Dein erstes Hallo Welt Programm/HelloWorld.java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 5: HalloWelt(1).java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_5/assignment_Dein erstes Hallo Welt Programm/HalloWelt(1).java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 6: HelloWorld_abgabe.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_6/assignment_Dein erstes Hallo Welt Programm/HelloWorld_abgabe.java
+  [INFO] llm.moodle.course_downloader: Processing assignment: Java Nutzerverwaltung
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 4: BenutzerVerwaltung.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_4/assignment_Java Nutzerverwaltung/BenutzerVerwaltung.java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 5: user(2).java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_5/assignment_Java Nutzerverwaltung/user(2).java
+  [INFO] llm.moodle.course_downloader:   Downloading submission from user 6: UserManager.java
+  [INFO] llm.moodle.course_downloader:    Downloaded: test_submissions/submissions/user_6/assignment_Java Nutzerverwaltung/UserManager.java
+  [INFO] llm.moodle.course_downloader: Downloaded 6 submission files from 2 assignments
+
+  Assignments mit Submissions:
+? Welches Assignment bewerten? 2. Java Nutzerverwaltung (3 Submission(s))
+
+  3 Submission(s) für 'Java Nutzerverwaltung':
+? Welche Submission bewerten? Alle bewerten
+
+  Bewerte 3 Submissions...
+5 Kompetenzen pro Submission
+
+  [1/3] Bewerte user_4...
+
+  Bewerte Submission...
+  Datei: BenutzerVerwaltung.java
+  User: user_4
+5 Kompetenzen zu bewerten
+
+  Bewerte mit claude-opus-4-1-20250805...
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [1/5] Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [2/5] Implementierung und Manipulation von Datenstrukturen in Java... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [3/5] Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [4/5] Nutzung der Scanner-Klasse und System.in für Benutzereingaben... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [5/5] Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs... ✓
+
+  ========================================
+  BEWERTUNGSERGEBNIS
+  ========================================
+  Kompetenzen erreicht: 5/5
+  Erfolgsquote: 100.0%
+
+  Details:
+  ✓ Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Erweitere deine Setter um Validierungslogik! Zum Beispiel könnte setRole() prüfen, ob die übergebene...
+  ✓ Implementierung und Manipulation von Datenstrukturen in Java
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Erweitere deine Datenstruktur-Kenntnisse durch den Einsatz einer HashMap<String, User> für die Benut...
+  ✓ Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Erweitere dein Klassendesign durch Auslagerung der User-Klasse in eine eigene Datei und ergänze eine...
+  ✓ Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+     Erfüllungsgrad: sicher angewendet
+     Tipp: Erwäge für noch robusteren Code die Behandlung von InputMismatchException oder NoSuchElementExceptio...
+  ✓ Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+     Erfüllungsgrad: sicher angewendet
+     Tipp: Du könntest die Methode 'findUserByName' noch eleganter mit Java 8 Streams umsetzen: users.stream()....
+
+  Speichere Feedback in Moodle...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+  [INFO] cli.phases.grading: Feedback für User 4 gespeichert (Note: 100%)
+Feedback in Moodle gespeichert
+
+  Markiere Kompetenzen in Moodle...
+  [INFO] cli.phases.grading: Kompetenz 'Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Implementierung und Manipulation von Datenstrukturen in Java' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Nutzung der Scanner-Klasse und System.in für Benutzereingaben' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs' als erreicht markiert
+5 Kompetenzen in Moodle markiert
+     → 5/5 (100%)
+
+  [2/3] Bewerte user_5...
+
+  Bewerte Submission...
+  Datei: user(2).java
+  User: user_5
+5 Kompetenzen zu bewerten
+
+  Bewerte mit claude-opus-4-1-20250805...
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [1/5] Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation... ✗
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [2/5] Implementierung und Manipulation von Datenstrukturen in Java... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [3/5] Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren... ✗
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [4/5] Nutzung der Scanner-Klasse und System.in für Benutzereingaben... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [5/5] Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs... ✓
+
+  ========================================
+  BEWERTUNGSERGEBNIS
+  ========================================
+  Kompetenzen erreicht: 3/5
+  Erfolgsquote: 60.0%
+
+  Details:
+  ✗ Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+     Erfüllungsgrad: oberflächlich
+     Tipp: Ergänze in der User-Klasse Getter-Methoden wie 'public String getName() { return name; }' und mache ...
+  ✓ Implementierung und Manipulation von Datenstrukturen in Java
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Nutze die erweiterte for-Schleife (for-each) für bessere Lesbarkeit: Statt 'for (int i = 0; i < user...
+  ✗ Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+     Erfüllungsgrad: oberflächlich
+     Tipp: Mache die Attribute in der User-Klasse private und füge getter-Methoden hinzu: 'private String name;...
+  ✓ Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+     Erfüllungsgrad: sicher angewendet
+     Tipp: Erwäge die Verwendung von scanner.next() oder scanner.nextInt() für einfache Eingaben wie die Menüau...
+  ✓ Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Erwäge die Verwendung eines switch-case-Statements für das Menü statt der if-else-Kette. Das würde d...
+
+  Speichere Feedback in Moodle...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+  [INFO] cli.phases.grading: Feedback für User 5 gespeichert (Note: 60%)
+Feedback in Moodle gespeichert
+
+  Markiere Kompetenzen in Moodle...
+  [INFO] cli.phases.grading: Kompetenz 'Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation' als nicht erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Implementierung und Manipulation von Datenstrukturen in Java' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren' als nicht erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Nutzung der Scanner-Klasse und System.in für Benutzereingaben' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs' als erreicht markiert
+5 Kompetenzen in Moodle markiert
+     → 3/5 (60%)
+
+  [3/3] Bewerte user_6...
+
+  Bewerte Submission...
+  Datei: UserManager.java
+  User: user_6
+5 Kompetenzen zu bewerten
+
+  Bewerte mit claude-opus-4-1-20250805...
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [1/5] Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation... ✗
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [2/5] Implementierung und Manipulation von Datenstrukturen in Java... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [3/5] Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren... ✗
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [4/5] Nutzung der Scanner-Klasse und System.in für Benutzereingaben... ✓
+  [INFO] llm.feedback.claude_llm: Parsed Feedback erfolgreich erzeugt.
+    [5/5] Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs... ✓
+
+  ========================================
+  BEWERTUNGSERGEBNIS
+  ========================================
+  Kompetenzen erreicht: 3/5
+  Erfolgsquote: 60.0%
+
+  Details:
+  ✗ Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation
+     Erfüllungsgrad: nicht sichtbar
+     Tipp: Erstelle eine separate Klasse 'User' mit privaten Attributen (name, role), einem Konstruktor User(St...
+  ✓ Implementierung und Manipulation von Datenstrukturen in Java
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Erwäge die Verwendung von ArrayList<String> statt Arrays. Damit würde das Löschen zu einer einzigen ...
+  ✗ Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren
+     Erfüllungsgrad: nicht sichtbar
+     Tipp: Erstelle eine separate Klasse 'User' mit privaten Attributen 'name' und 'role'. Nutze dann eine Klas...
+  ✓ Nutzung der Scanner-Klasse und System.in für Benutzereingaben
+     Erfüllungsgrad: sicher angewendet
+     Tipp: Denke daran, am Programmende input.close() aufzurufen, um Ressourcen freizugeben. Dies könntest du n...
+  ✓ Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs
+     Erfüllungsgrad: funktional erfüllt
+     Tipp: Verwende switch-case statt der vielen if-Abfragen für die Menüauswahl. Das macht den Code übersichtl...
+
+  Speichere Feedback in Moodle...
+  [INFO] llm.moodle.course_downloader: Checking course ID 11 against 11
+  [INFO] llm.moodle.course_downloader: Found 2 assignments in course
+  [INFO] cli.phases.grading: Feedback für User 6 gespeichert (Note: 60%)
+Feedback in Moodle gespeichert
+
+  Markiere Kompetenzen in Moodle...
+  [INFO] cli.phases.grading: Kompetenz 'Einsatz von Konstruktoren und Getter/Setter-Methoden zur Datenmanipulation' als nicht erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Implementierung und Manipulation von Datenstrukturen in Java' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Klassendesign und -implementierung unter Berücksichtigung von Datenkapselung und Sichtbarkeitsmodifikatoren' als nicht erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Nutzung der Scanner-Klasse und System.in für Benutzereingaben' als erreicht markiert
+  [INFO] cli.phases.grading: Kompetenz 'Nutzung von Kontrollstrukturen in Java zur Steuerung des Programmablaufs' als erreicht markiert
+5 Kompetenzen in Moodle markiert
+     → 3/5 (60%)
+
+  ========================================
+  GESAMTÜBERSICHT
+  ========================================
+  🟢 user_4: 5/5 (100%)
+  🟡 user_5: 3/5 (60%)
+  🟡 user_6: 3/5 (60%)
+
+
+✓ 3 Submissions bewertet
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: gdp_test
+Modell: claude-opus-4-1-20250805
+Debug: An
+
+? Was möchtest du tun? (Use arrow keys)
+ » Pipeline ausführen (Phase 1-3)
+   Assignment-Analyse
+   Kompetenzen nach Moodle uploaden
+   Submission-Bewertung
+   ─────────────────
+   Anderen Kurs wählen
+   Modell wechseln
+   Debug-Modus ausschalten
+   ─────────────────
+   Beenden
+
+
+
+
+
+

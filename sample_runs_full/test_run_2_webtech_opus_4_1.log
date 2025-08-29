@@ -1,0 +1,621 @@
+           Verfügbare Moodle-Kurse
+╭──────┬──────────────────┬──────────────────╮
+│ #    │ Kursname         │ Shortname        │
+├──────┼──────────────────┼──────────────────┤
+│ 1    │ webtech_template │ webtech_template │
+├──────┼──────────────────┼──────────────────┤
+│ 2    │ gdp_template     │ gdp_template     │
+├──────┼──────────────────┼──────────────────┤
+│ 3    │ gdp_test         │ gdp_test         │
+├──────┼──────────────────┼──────────────────┤
+│ 4    │ webtech_test     │ webtech_test     │
+╰──────┴──────────────────┴──────────────────╯
+
+? Wähle einen Kurs 4. webtech_test (webtech_test)
+✓ Gewählt: webtech_test
+✓ Kurs gewechselt zu: webtech_test
+
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: webtech_test
+Modell: claude-opus-4-1-20250805
+Debug: Aus
+
+? Was möchtest du tun? Pipeline ausführen (Phase 1-3)
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE 1: Dokumente laden                                                                                                                                                                   │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+Lade Kursmaterialien...
+13 Dateien heruntergeladen
+Lade Assignments...
+0 Assignments gefunden
+Chunke und lade downloads/webtech_test/WebTech - Intro.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema1-Web-Basics.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/spring-boot-init.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema2-Frontend-Grundlagen.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema3-JavaScript.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/npm-jest-vue-init.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema4-Vue.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema5-TypeScript-JavaScript.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema6-Frontend-Backend-Kommunikation.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema7-Datenbankanbindung 1.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema8-CICD-Tests.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema9-CSS-Troubleshooting.pdf in die Vektor-Datenbank
+Chunke und lade downloads/webtech_test/WebTech-Thema10-Auth.pdf in die Vektor-Datenbank
+13 von 13 Dokumenten erfolgreich geladen
+359 Chunks in ChromaDB erstellt
+✓ Kurs geladen: webtech_test (ID: 12)
+
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE 2: Kurs klassifizieren                                                                                                                                                               │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  Analysiere 13 Dokumente für Kurs-Klassifikation...
+    Lade Sample aus: WebTech - Intro.pdf
+    Lade Sample aus: WebTech-Thema1-Web-Basics.pdf
+    Lade Sample aus: spring-boot-init.pdf
+  Nutze claude-opus-4-1-20250805 für Klassifikation
+
+  Klassifiziere Kursinhalt (4601 Zeichen)...
+
+  KURS-KLASSIFIKATION:
+    Fachbereich: Web-Entwicklung
+    Zielgruppe: Bachelor Grundstudium
+    Schwerpunkt: Gemischt
+    Confidence: 0.90
+    Begründung: Der Kurs behandelt grundlegende Web-Technologien und deren Bedeutung, was auf eine Einführung in die Web-Entwicklung hinweist. Die Inhalte sind sowohl theoretisch (z.B.
+Funktionsweise des Internets) a...
+✓ Klassifikation erfolgreich
+
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE 3: Dokumente analysieren                                                                                                                                                             │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+======================================================================
+  PHASE 3: EINZELDOKUMENT-ANALYSE
+======================================================================
+  Nutze Prompts für Fachbereich: Web-Entwicklung
+  Nutze claude-opus-4-1-20250805 für Einzelanalyse
+  Analysiere 13 Dokumente...
+
+  [1/13] Analysiere: WebTech - Intro.pdf
+
+ RAG KEYWORDS: ['Webtechnologie', 'Single-Page-Applications', 'Tech-Stack', 'Softwareentwicklung', 'Webanwendungen', 'Deployment', 'Wirtschaftsinformatik', 'KI-Assistenz']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech - Intro.pdf):
+   1. Spring Boot REST APIs entwickeln
+   2. Vue.js Single-Page Applications erstellen
+   3. HTML5 und CSS3 für moderne Webseiten einsetzen
+   4. JavaScript/TypeScript für dynamische Inhalte programmieren
+   5. Frontend-Backend-Kommunikation mit AJAX implementieren
+   6. Datenbank-Integration mit PostgreSQL umsetzen
+   7. CI/CD-Pipelines mit GitHub Actions aufbauen
+   8. Deployment auf Cloud-Plattformen (Render.com) durchführen
+   9. Frontend- und Backend-Tests schreiben
+   10. Git/GitHub für Versionskontrolle nutzen
+   ... und 4 weitere
+
+ LERNZIELE:
+   1. REST APIs mit Spring Boot entwickeln und testen
+   2. Single-Page Applications mit Vue.js erstellen
+   3. Frontend und Backend über AJAX verbinden
+   4. Datenbank-Entitäten speichern und verwalten
+   5. CI/CD-Pipelines einrichten und automatisieren
+
+ Taxonomie: Erschaffen (6)
+------------------------------------------------------------
+    Konsolidiere 14 Kompetenzen...
+      1. Entwicklung von REST APIs mit Spring Boot und Integration von PostgreSQL-Datenbanken
+      2. Erstellung von modernen Single-Page Applications mit Vue.js und dynamischen Inhalten durch JavaScript/TypeScript
+      3. Implementierung von Frontend-Backend-Kommunikation und Web-Security-Maßnahmen
+      4. Aufbau von CI/CD-Pipelines und Deployment-Prozessen auf Cloud-Plattformen
+      5. Anwendung von Software-Architekturprinzipien und Testmethoden für Frontend und Backend
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [2/13] Analysiere: WebTech-Thema1-Web-Basics.pdf
+
+ RAG KEYWORDS: ['Web-Technologien', 'HTTP-Protokoll', 'HTML', 'Web-Browser', 'Web-Server', 'Client-Side Rendering', 'Server-Side Rendering', 'JavaScript']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema1-Web-Basics.pdf):
+   1. Client-Server-Architektur verstehen
+   2. HTTP-Protokoll anwenden
+   3. Server-Side vs Client-Side Rendering unterscheiden
+   4. Spring Boot Backend entwickeln
+   5. REST APIs implementieren
+   6. Vue.js Frontend erstellen
+   7. Git/GitHub für Versionskontrolle nutzen
+   8. Web-Anwendungen deployen
+   9. Datenbank-Integration umsetzen
+   10. Frontend-Backend-Kommunikation realisieren
+   ... und 4 weitere
+
+ LERNZIELE:
+   1. Web-Architektur-Konzepte erklären
+   2. HTTP-Requests verstehen und nutzen
+   3. Spring Boot Controller entwickeln
+   4. REST-Endpunkte implementieren
+   5. Vue.js-Komponenten erstellen
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 14 Kompetenzen...
+      1. Verständnis der Client-Server-Architektur und der Unterschiede zwischen Server-Side und Client-Side Rendering
+      2. Anwendung des HTTP-Protokolls und Implementierung von REST APIs für die Web-Kommunikation
+      3. Entwicklung von Web-Anwendungen mit Spring Boot für das Backend und Vue.js für das Frontend
+      4. Integration von Datenbanken und Realisierung der Frontend-Backend-Kommunikation
+      5. Nutzung von Git/GitHub für Versionskontrolle und Aufsetzen von CI/CD-Pipelines für das Deployment
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [3/13] Analysiere: spring-boot-init.pdf
+
+ RAG KEYWORDS: ['Spring MVC', 'Spring Boot', 'RESTful Applications', 'PostgreSQL', 'JDBC', 'R2DBC', 'Java Persistence API', 'GitHub']
+
+ EXTRAHIERTE KOMPETENZEN (spring-boot-init.pdf):
+   1. Spring Boot Projekte mit Spring Initializr initialisieren
+   2. Dependencies für Spring Boot Projekte konfigurieren (Spring Web, DevTools, Validation, PostgreSQL, JPA)
+   3. Git-Repositories für Web-Projekte anlegen und verwalten
+   4. Server-Side Rendering mit Thymeleaf implementieren
+   5. REST-APIs mit Spring Boot entwickeln
+   6. Controller in Spring Boot erstellen (@Controller, @GetMapping)
+   7. Datenklassen für Web-Anwendungen modellieren
+   8. Lombok zur Code-Optimierung einsetzen
+   9. ResponseEntity für REST-Responses verwenden
+   10. Model-View-Controller Pattern in Spring anwenden
+   ... und 2 weitere
+
+ LERNZIELE:
+   1. Spring Boot Projekt mit Spring Initializr aufsetzen
+   2. Passende Dependencies für Web-Projekte auswählen
+   3. Git-Repository strukturiert anlegen
+   4. Server-Side Rendering Controller implementieren
+   5. REST-Controller mit ResponseEntity entwickeln
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 12 Kompetenzen...
+      1. Nutzung von Spring Initializr zur Initialisierung von Spring Boot Projekten
+      2. Konfiguration von Dependencies und Verwaltung von Maven- und Gradle-Builds für Spring Boot Anwendungen
+      3. Entwicklung von REST-APIs und Implementierung von Server-Side Rendering mit Thymeleaf
+      4. Anwendung des Model-View-Controller Patterns in Spring Boot zur Strukturierung von Web-Anwendungen
+      5. Modellierung von Datenklassen und Einsatz von Lombok zur Code-Optimierung in Java
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [4/13] Analysiere: WebTech-Thema2-Frontend-Grundlagen.pdf
+
+ RAG KEYWORDS: ['Frontend', 'HTML', 'CSS', 'JavaScript', 'REST API', 'Drei-Schichten-Architektur', 'Web-Browser', 'Web-Server']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema2-Frontend-Grundlagen.pdf):
+   1. HTML5-Dokumentstruktur erstellen und verstehen
+   2. Semantische HTML-Elemente gezielt einsetzen
+   3. HTML-Tags und deren Attribute korrekt verwenden
+   4. Frontend-Architektur im Drei-Schichten-Modell verstehen
+   5. Zusammenspiel von HTML, CSS und JavaScript koordinieren
+   6. Browser-Rendering-Prozess und DOM-Manipulation verstehen
+   7. Barrierefreie und SEO-optimierte Webseiten strukturieren
+   8. HTML-Formulare, Tabellen und Listen implementieren
+   9. Externe Ressourcen und Bibliotheken einbinden
+   10. Blocking vs. Non-Blocking Resources unterscheiden
+
+ LERNZIELE:
+   1. HTML5-Dokumente mit korrekter DOCTYPE-Deklaration erstellen
+   2. Semantische Tags (header, nav, main, article, section, aside, footer) anwenden
+   3. HTML-Grundelemente (Headings, Paragraphen, Links, Bilder) implementieren
+   4. Formatierungs-Tags für Textgestaltung einsetzen
+   5. Tabellen und Listen strukturiert aufbauen
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+      1. Erstellung und Strukturierung von HTML5-Dokumenten unter Berücksichtigung semantischer Elemente
+      2. Verständnis der Frontend-Architektur im Drei-Schichten-Modell und der Interaktion von HTML, CSS und JavaScript
+      3. Einsatz von HTML-Formularen, Tabellen und Listen zur Gestaltung interaktiver Webseiten
+      4. Implementierung von barrierefreien und SEO-optimierten Webseiten
+      5. Verwendung und Einbindung externer Ressourcen und Bibliotheken unter Berücksichtigung von Blocking und Non-Blocking Ressourcen
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [5/13] Analysiere: WebTech-Thema3-JavaScript.pdf
+
+ RAG KEYWORDS: ['JavaScript', 'Vue.js', 'REST-Schnittstelle', 'Frontend', 'Backend', 'GitHub', 'Datenbank', 'npm']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema3-JavaScript.pdf):
+   1. JavaScript-Grundlagen verstehen und anwenden
+   2. Node.js und npm für JavaScript-Entwicklung nutzen
+   3. JavaScript-Module (CommonJS/ES6) implementieren
+   4. Test-Driven Development mit Jest durchführen
+   5. Code-Qualität mit ESLint und Prettier sicherstellen
+   6. JavaScript-Sprachfeatures (Scopes, Type Coercion, funktionale Programmierung) anwenden
+   7. Vue.js Framework für Single-Page Applications einsetzen
+   8. Frontend-Backend-Integration in Drei-Schichten-Architektur umsetzen
+   9. Build-Automatisierung und Deployment-Prozesse verstehen
+
+ LERNZIELE:
+   1. JavaScript-Code mit modernen ES6+ Features schreiben
+   2. Node.js-Projekte mit npm initialisieren und verwalten
+   3. Unit-Tests mit Jest erstellen und ausführen
+   4. Linting und Formatting-Tools konfigurieren und anwenden
+   5. Unterschiede zwischen var, let und const anwenden
+
+ Taxonomie: Anwenden (Stufe 3)
+------------------------------------------------------------
+    Konsolidiere 9 Kompetenzen...
+      1. Verständnis und Anwendung von JavaScript-Grundlagen und modernen Sprachfeatures
+      2. Nutzung von Node.js und npm für die JavaScript-Entwicklung und Build-Automatisierung
+      3. Implementierung von JavaScript-Modulen und Integration in Frontend-Backend-Architekturen
+      4. Einsatz von Test-Driven Development mit Jest zur Sicherstellung der Code-Qualität
+      5. Anwendung von Vue.js für die Entwicklung von Single-Page Applications
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [6/13] Analysiere: npm-jest-vue-init.pdf
+
+ RAG KEYWORDS: ['npm', 'Jest', 'Vue.js', 'Node.js', 'GitHub', 'Dev-Dependency', 'package.json', 'Frontend-Entwicklung']
+
+ EXTRAHIERTE KOMPETENZEN (npm-jest-vue-init.pdf):
+   1. Node.js und npm für Frontend-Entwicklung einrichten und verwenden
+   2. JavaScript-Projekte mit npm initialisieren und verwalten
+   3. Jest als Testing-Framework für JavaScript konfigurieren und nutzen
+   4. Unit-Tests in JavaScript schreiben und ausführen
+   5. JavaScript Module Systems verstehen (CommonJS vs. ES Modules)
+   6. ES Modules mit Babel für Jest konfigurieren
+   7. Vue.js-Projekte mit npm create scaffolden
+   8. TypeScript in Vue.js-Projekten einsetzen
+   9. Build-Tools und Development-Server für Frontend-Projekte nutzen
+   10. Dependencies und DevDependencies in package.json verwalten
+
+ LERNZIELE:
+   1. Node.js und npm auf verschiedenen Betriebssystemen installieren
+   2. JavaScript-Projekte mit npm init initialisieren
+   3. Jest als Test-Framework einrichten und konfigurieren
+   4. Unit-Tests für JavaScript-Funktionen schreiben
+   5. CommonJS und ES Modules für Import/Export verwenden
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+      1. Einrichtung und Nutzung von Node.js und npm für die Frontend-Entwicklung
+      2. Konfiguration und Anwendung von Jest als Testing-Framework für JavaScript
+      3. Verständnis und Einsatz von JavaScript Module Systems in Verbindung mit Babel
+      4. Scaffolding und Entwicklung von Vue.js-Projekten unter Verwendung von npm und TypeScript
+      5. Verwaltung von Dependencies und DevDependencies in package.json für JavaScript-Projekte
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [7/13] Analysiere: WebTech-Thema4-Vue.pdf
+
+ RAG KEYWORDS: ['Vue.js', 'Single-Page Applications', 'TypeScript', 'Prettier', 'Vue Router', 'Single-File Components', 'Options API', 'Composition API']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema4-Vue.pdf):
+   1. Vue.js Single-Page Applications entwickeln
+   2. Vue-Projekte mit TypeScript initialisieren und strukturieren
+   3. Vue Router für Client-Side Routing implementieren
+   4. Single-File Components (.vue) erstellen
+   5. Options API und Composition API anwenden
+   6. Reaktive Datenbindung und Templating umsetzen
+   7. Vue Lifecycle Hooks nutzen
+   8. Asynchrone REST-API Aufrufe mit fetch/axios durchführen
+   9. CORS-Konfiguration verstehen und implementieren
+   10. Frontend-Backend-Kommunikation mit JSON realisieren
+
+ LERNZIELE:
+   1. Vue.js-Projekte mit npm/CLI generieren und konfigurieren
+   2. Single-File Components mit Template, Script und Style entwickeln
+   3. Zwischen Options API und Composition API wählen und anwenden
+   4. Client-side Templating mit Datenbindung implementieren
+   5. Lifecycle Hooks für Komponentenlogik einsetzen
+
+ Taxonomie: Anwenden (Apply)
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+      1. Entwicklung von Single-Page Applications mit Vue.js und TypeScript
+      2. Einsatz von Vue Router für Client-Side Routing und Frontend-Backend-Kommunikation mit JSON
+      3. Anwendung von reaktiver Datenbindung, Templating und Vue Lifecycle Hooks
+      4. Erstellung und Nutzung von Single-File Components (.vue) mit Options API und Composition API
+      5. Durchführung asynchroner REST-API Aufrufe und Verständnis der CORS-Konfiguration
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [8/13] Analysiere: WebTech-Thema5-TypeScript-JavaScript.pdf
+
+ RAG KEYWORDS: ['TypeScript', 'JavaScript', 'Webtechnologien', 'Typsystem', 'Vue.js', 'fortgeschrittene Konzepte', 'Hands-On', 'Playgrounds']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema5-TypeScript-JavaScript.pdf):
+   1. TypeScript als Superset von JavaScript verstehen und anwenden
+   2. TypeScript-Typsystem mit expliziter und impliziter Typisierung nutzen
+   3. Primitive Datentypen und spezielle Typen (any, null, undefined) verwenden
+   4. Arrays und Objekte typisieren
+   5. Type Aliases und Interfaces definieren und anwenden
+   6. Klassen mit Zugriffsmodifikatoren und Gettern/Settern implementieren
+   7. Structural Typing und Duck Typing verstehen
+   8. Type Unions (&) und Type Intersections (|) einsetzen
+   9. Optionale Properties und Parameter mit ? definieren
+   10. Arrow Functions schreiben und anwenden
+   ... und 5 weitere
+
+ LERNZIELE:
+   1. TypeScript-Code mit korrekter Typisierung schreiben
+   2. Interfaces und Type Aliases zur Strukturierung erstellen
+   3. Klassen mit TypeScript-Features implementieren
+   4. Higher-Order Functions zur Array-Manipulation einsetzen
+   5. Arrow Functions syntaktisch korrekt verwenden
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 15 Kompetenzen...
+      1. Verständnis und Anwendung von TypeScript als Superset von JavaScript
+      2. Nutzung des TypeScript-Typsystems zur Typisierung von primitiven Datentypen, Arrays und Objekten
+      3. Einsatz von Type Aliases, Interfaces und Klassen mit Zugriffsmodifikatoren in TypeScript
+      4. Anwendung von funktionalen Programmierkonzepten mit Higher-Order Functions und Array-Transformationen
+      5. Verwendung von modernen JavaScript-Features wie Optional Chaining und Nullish Coalescing
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [9/13] Analysiere: WebTech-Thema6-Frontend-Backend-Kommunikation.pdf
+
+ RAG KEYWORDS: ['Drei-Schichten-Architektur', 'HTTP', 'REST-Architekturstil', 'Backend-Kommunikation', 'Deployment', 'API', 'Spring Web', 'Frontend-Backend-Interaktion']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema6-Frontend-Backend-Kommunikation.pdf):
+   1. Drei-Schichten-Architektur verstehen und anwenden
+   2. HTTP-Protokoll und Kommunikationsmethoden beherrschen
+   3. REST-Architekturstil implementieren
+   4. REST-APIs mit Spring Web entwickeln
+   5. HTTP-Methoden (GET, POST, PUT, DELETE) einsetzen
+   6. JSON als Datenformat nutzen
+   7. Parameter-Übergabe (Pfad-, Query-, Header-, Payload-Parameter) implementieren
+   8. Richardson Maturity Model für REST-APIs anwenden
+   9. HTTP Response Codes verwenden
+   10. Asynchrone Backend-Kommunikation mit AJAX umsetzen
+   ... und 7 weitere
+
+ LERNZIELE:
+   1. Drei-Schichten-Architektur für Web-Anwendungen entwerfen
+   2. REST-konforme APIs entwickeln und dokumentieren
+   3. HTTP-Requests mit verschiedenen Parameter-Typen implementieren
+   4. Asynchrone JavaScript-Kommunikation mit Backend programmieren
+   5. CORS-Policies für sichere API-Zugriffe konfigurieren
+
+ Taxonomie: Anwenden (Apply)
+------------------------------------------------------------
+    Konsolidiere 17 Kompetenzen...
+      1. Verständnis und Anwendung der Drei-Schichten-Architektur in der Webentwicklung
+      2. Einsatz von HTTP-Protokoll und -Methoden zur Kommunikation zwischen Frontend und Backend
+      3. Entwicklung und Implementierung von REST-APIs mit Spring Web und JSON-Datenformat
+      4. Umsetzung asynchroner Backend-Kommunikation mit AJAX, Promises und Callbacks
+      5. Deployment von Frontend- und Backend-Anwendungen in Produktionsumgebungen unter Verwendung von Docker und Render.com
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [10/13] Analysiere: WebTech-Thema7-Datenbankanbindung 1.pdf
+
+ RAG KEYWORDS: ['Web-Technologien', 'Datenbankanbindung', 'Objektrelationales Mapping', 'REST-Controller', 'PostgreSQL', 'Dependency Management', 'Entity-Klassen', 'Service-Klassen']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema7-Datenbankanbindung 1.pdf):
+   1. Datenbankanbindung in Spring Boot implementieren
+   2. Object-Relational Mapping (ORM) mit JPA/Hibernate anwenden
+   3. PostgreSQL-Datenbanken konfigurieren und anbinden
+   4. REST-Controller für Datenbankoperationen entwickeln
+   5. Umgebungsvariablen für sichere Credential-Verwaltung nutzen
+   6. CRUD-Operationen über Repository-Pattern implementieren
+   7. Entity-Klassen und Annotations für ORM erstellen
+   8. Service-Layer mit Dependency Injection aufbauen
+   9. Datenkonvertierung zwischen SQL, Java und JSON verstehen
+
+ LERNZIELE:
+   1. PostgreSQL-Datenbank auf Render.com einrichten
+   2. Datenbank-Dependencies in build.gradle konfigurieren
+   3. Datenbankverbindung über application.properties herstellen
+   4. Umgebungsvariablen für Credentials implementieren
+   5. Entity-Klassen mit JPA-Annotations versehen
+
+ Taxonomie: Anwenden (Apply)
+------------------------------------------------------------
+    Konsolidiere 9 Kompetenzen...
+      1. Implementierung der Datenbankanbindung in Spring Boot mit PostgreSQL
+      2. Anwendung von Object-Relational Mapping (ORM) mit JPA/Hibernate
+      3. Entwicklung von REST-Controllern für CRUD-Operationen mit Repository-Pattern
+      4. Nutzung von Umgebungsvariablen zur sicheren Verwaltung von Datenbank-Credentials
+      5. Verständnis der Datenkonvertierung zwischen SQL, Java und JSON
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [11/13] Analysiere: WebTech-Thema8-CICD-Tests.pdf
+
+ RAG KEYWORDS: ['Web-Technologien', 'CI/CD', 'Frontend-Tests', 'Backend-Tests', 'Spring Boot', 'REST API', 'Vue.js', 'Postgres']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema8-CICD-Tests.pdf):
+   1. CI/CD-Pipelines mit GitHub Actions implementieren
+   2. Automatisierte Frontend- und Backend-Tests entwickeln
+   3. Unit-Tests mit Mocking-Frameworks erstellen
+   4. Integrationstests für REST APIs durchführen
+   5. Vue Component Tests mit Test Utils schreiben
+   6. Deployment-Prozesse auf PaaS-Plattformen (Render) konfigurieren
+   7. Build-Automatisierung für Web-Anwendungen einrichten
+   8. Continuous Integration Workflows gestalten
+   9. Test-Driven Development praktizieren
+   10. Asynchrone Tests implementieren
+
+ LERNZIELE:
+   1. CI/CD-Pipeline mit GitHub Actions aufsetzen
+   2. Backend-Tests mit Spring Boot und Mockito entwickeln
+   3. Frontend-Tests mit Vue Test Utils implementieren
+   4. Mocking-Strategien für Unit-Tests anwenden
+   5. In-Memory-Datenbanken für Tests konfigurieren
+
+ Taxonomie: Anwenden/Analysieren
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+      1. Implementierung von CI/CD-Pipelines mit GitHub Actions für Web-Anwendungen
+      2. Entwicklung und Durchführung von automatisierten Tests für Frontend und Backend
+      3. Einsatz von Test-Driven Development und Mocking-Frameworks zur Qualitätssicherung
+      4. Konfiguration von Deployment-Prozessen auf PaaS-Plattformen
+      5. Gestaltung von Continuous Integration Workflows zur Build-Automatisierung
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [12/13] Analysiere: WebTech-Thema9-CSS-Troubleshooting.pdf
+
+ RAG KEYWORDS: ['CSS', 'Box-Modell', 'Flexbox', 'Media Queries', 'Troubleshooting', 'TypeScript', 'JavaScript', 'Webtechnologien']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema9-CSS-Troubleshooting.pdf):
+   1. CSS Box-Model verstehen und anwenden
+   2. Flexbox-Layouts entwickeln und implementieren
+   3. Responsive Design mit Media Queries umsetzen
+   4. CSS-Eigenschaften für Layout und Styling einsetzen
+   5. Flex-Container und Flex-Items konfigurieren
+   6. CSS-Tools und Generatoren nutzen
+   7. Web-Layouts für verschiedene Geräte optimieren
+   8. CSS-Debugging und Troubleshooting durchführen
+
+ LERNZIELE:
+   1. Box-Model-Komponenten (Content, Padding, Border, Margin) anwenden
+   2. Flexbox-Container mit display:flex erstellen
+   3. Elemente mit Flexbox zentrieren und ausrichten
+   4. Flex-grow für dynamische Größenanpassung einsetzen
+   5. Flex-direction für Layout-Orientierung steuern
+
+ Taxonomie: Anwenden (Stufe 3)
+------------------------------------------------------------
+    Konsolidiere 8 Kompetenzen...
+      1. Verständnis und Anwendung des CSS Box-Models für Layoutgestaltung
+      2. Entwicklung und Implementierung von Flexbox-Layouts zur Optimierung von Web-Layouts
+      3. Umsetzung von Responsive Design mit Media Queries für verschiedene Endgeräte
+      4. Einsatz von CSS-Eigenschaften und -Tools zur Verbesserung von Layout und Styling
+      5. Durchführung von CSS-Debugging und Troubleshooting zur Fehlerbehebung
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  [13/13] Analysiere: WebTech-Thema10-Auth.pdf
+
+ RAG KEYWORDS: ['Web-Technologien', 'Authentifizierung', 'Autorisierung', 'Identity Provider', 'Troubleshooting', 'Web-App', 'Datenbank', 'Nutzerverwaltung']
+
+ EXTRAHIERTE KOMPETENZEN (WebTech-Thema10-Auth.pdf):
+   1. Authentifizierung und Autorisierung in Web-Anwendungen implementieren
+   2. Nutzerverwaltung mit eigener Datenbank entwickeln
+   3. Externe Identity Provider (Okta) integrieren
+   4. OAuth2/OpenID Connect in Vue.js und Spring Boot einsetzen
+   5. Frontend- und Backend-Authentisierung koordinieren
+   6. Passwort-Sicherheit und Credential-Management gewährleisten
+   7. CORS-Problematik verstehen und lösen
+   8. Multi-User-Funktionalität in Web-Apps umsetzen
+   9. Debugging und Troubleshooting in Full-Stack-Anwendungen
+   10. CI/CD-Pipelines mit GitHub Actions aufsetzen
+
+ LERNZIELE:
+   1. Unterschied zwischen Authentifizierung und Autorisierung erklären
+   2. Eigene Nutzerverwaltung mit sicherer Passwort-Speicherung implementieren
+   3. Okta Sign-in Widget in Vue.js-Anwendung integrieren
+   4. Backend-Authentisierung mit Spring Security konfigurieren
+   5. JWT-Token für API-Authentifizierung verwenden
+
+ Taxonomie: Anwenden
+------------------------------------------------------------
+    Konsolidiere 10 Kompetenzen...
+      1. Implementierung von Authentifizierung und Autorisierung in Web-Anwendungen
+      2. Entwicklung einer Nutzerverwaltung mit eigener Datenbank und Integration externer Identity Provider
+      3. Einsatz von OAuth2/OpenID Connect in Full-Stack-Anwendungen mit Vue.js und Spring Boot
+      4. Gewährleistung von Passwort-Sicherheit und Credential-Management in Web-Anwendungen
+      5. Aufsetzen und Verwaltung von CI/CD-Pipelines mit GitHub Actions
+    → 5 konsolidierte Kompetenzen
+5 Kompetenzen extrahiert
+
+  ANALYSE-ZUSAMMENFASSUNG:
+    Erfolgreiche Analysen: 13/13
+    Gesamt extrahierte Kompetenzen: 65
+✓ 13 Dokumente analysiert
+
+
+✓ Pipeline abgeschlossen - Menü wird wieder angezeigt
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: webtech_test
+Modell: claude-opus-4-1-20250805
+Debug: Aus
+
+? Was möchtest du tun? Kompetenzen nach Moodle uploaden
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ PHASE U: Moodle Upload für webtech_test                                                                                                                                                    │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+57 Kompetenzen in Neo4j gefunden
+  Teste Moodle-Verbindung...
+Verbunden mit: BA-Test-Moodle
+
+  Suche Kurs 'webtech_test' in Moodle...
+Kurs gefunden: webtech_test (ID: 12)
+
+  Starte Upload...
+  ----------------------------------------
+
+  ----------------------------------------
+     UPLOAD ERFOLGREICH!
+    Framework ID: 33
+    Themenbereiche: 1
+    Kompetenzen: 58
+    Mit Kurs verknüpft: Ja
+
+  Aktualisiere Topic-Summaries mit Lernzielen...
+    Topics aktualisiert: 13
+
+  Moodle-Links:
+    Framework: https://moodle.lucafriedrich.com/admin/tool/lp/competencyframeworks.php
+    Kurs-Kompetenzen: https://moodle.lucafriedrich.com/admin/tool/lp/coursecompetencies.php?courseid=12
+
+
+✓ Upload erfolgreich abgeschlossen
+
+
+? Enter zum Fortfahren ():
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                                                                                            ║
+║  KOMPETENZANALYSE-PIPELINE                                                                                                                                                                 ║
+║  KI-basierte Curriculum-Analyse                                                                                                                                                            ║
+║                                                                                                                                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Kurs: webtech_test
+Modell: claude-opus-4-1-20250805
+Debug: Aus
+
+? Was möchtest du tun? (Use arrow keys)
+   Pipeline ausführen (Phase 1-3)
+   Assignment-Analyse
+   Kompetenzen nach Moodle uploaden
+   Submission-Bewertung
+   ─────────────────
+   Anderen Kurs wählen
+   Modell wechseln
+   Debug-Modus einschalten
+   ─────────────────
+ » Beenden
+
+
+
+
+
+
+
+
+
+
+
